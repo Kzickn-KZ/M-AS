@@ -36,7 +36,7 @@ class Horas{
         		'$this->descripcion','$this->id_usuario','$this->id_estado');";
 				$this->db->query($sql);
 				if($this->db->errno){
-                die('<script language="javascript">alert("NO SE PUDO REGISTRAR LAS HORAS");location.href="../iniciousu.php" </script>');
+                die('<script language="javascript">alert("NO SE PUDO REGISTRAR LAS HORAS");location.href="../vista/aprendiz/iniciousu.php" </script>');
                 }else{
             	echo '<script language="javascript">alert("SE REGISTRARON LAS HORAS CORRECTAMENTE");';
             	echo 'location.href ="../vista/aprendiz/horasregistradas.php"</script>';

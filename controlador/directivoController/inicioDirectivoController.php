@@ -15,7 +15,7 @@
                 include_once '../../controlador/class.usuario.php';
                 include_once '../../modelo/conexion.php';
                 $query = Usuario::imprimirusuario("Where rol.id_rol=1 and estado.id_estado=5");
-                echo '<div class="datagrid" style="width:37%">';
+                echo '<div class="datagrid" style="width:55%">';
                 echo '<table  id="horas" >';
                 echo'<thead>';
                 echo "<th>Documento</th>";
@@ -35,10 +35,10 @@
         while($arreglo=mysqli_fetch_array($query)){
                 echo "<tr class='success'>";
             $arreglo[0];
-            echo "<td>$arreglo[1]</td>";
+            echo "<td style='width:37%'>$arreglo[1]</td>";
             //echo "<td>$arreglo[2]</td>";
-            echo "<td>$arreglo[3]</td>";
-            echo "<td>$arreglo[4]</td>";
+            echo "<td style='width:37%'>$arreglo[3]</td>";
+            echo "<td style='width:38%'>$arreglo[4]</td>";
             //echo "<td>$arreglo[5]</td>";
             //echo "<td>$arreglo[6]</td>";
             //echo "<td>$arreglo[7]</td>";

@@ -29,7 +29,7 @@ public function insertarcitacion(){
 	VALUES ('$this->id_usuario','$this->citador',  '$this->fecha', '$this->hora', '$this->id_sede', '$this->ambiente')";
 	$this->db->query($sql);
 		if($this->db->errno){
-			die('<script language="javascript">alert("ERROR NO SE A PODIDO ALMECENAR LA CITACION")location.href="../vista/citacion.php;" </script>');
+			die('<script language="javascript">alert("ERROR NO SE A PODIDO ALMECENAR LA CITACION")location.href="../vista/directivo/citacion.php;" </script>');
 		}else{
 			echo '<script language="javascript">alert("SE HA CITADO A EL APRENDIZ CORRECTAMENTE");';
 			echo 'location.href ="../vista/directivo/consultar_aprendiz.php"</script>';

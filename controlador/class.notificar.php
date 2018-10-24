@@ -26,11 +26,11 @@ class Novedades{
 	}//FIN CONSTRUCTOR//
 	public function insertarnovedad(){
 		$db = new Conexion();
-		$sql = "INSERT INTO novedades (id_tipoNovedad, documento, fecha, descripcion,id_usuario, id_estado) 
+		$sql = "INSERT INTO novedades (id_tipoNovedad, documento, fecha, descripcion,id_usuario, id_estado)
 		VALUES ('$this->id_tipoNovedad','$this->documento','$this->fecha','$this->descripcion','$this->id_usuario','$this->id_estado')";
 		$this->db->query($sql);
 		if($this->db->errno){
-                die('<script language="javascript">alert("NO SE PUDO REGISTRAR LA NOVEDAD, INTENTE DE NUEVO");location.href="../vista/novedad.php" </script>');
+                die('<script language="javascript">alert("NO SE PUDO REGISTRAR LA NOVEDAD, INTENTE DE NUEVO");location.href="../vista/aprendiz/novedad.php" </script>');
                 }else{
             	echo '<script language="javascript">alert("SE REGISTRO LA NOVEDAD, MUCHAS GRACIAS");';
             	echo 'location.href ="../vista/aprendiz/vernovedad.php"</script>';
