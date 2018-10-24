@@ -1,11 +1,8 @@
 <div class="box" id="contenido">
             <center>
-
                 <h3><strong>AGREGAR SUPERVISORES</strong></h3>
                 <em>(Agregar supervisores)</em></acronym><br><br>
-
-                <form method="POST" action="../../controlador/insertarusuario.php">
-
+                <form method="POST" action="../../controlador/insertarsupervisor.php">
                     Documento:
                     <input type="text" name="documento" id="documento" style="width:30%; height:6%" class="form-control"
                         required placeholder="Documento">
@@ -31,7 +28,7 @@
                         required placeholder="Apellido">
                     Correo:
                     <input type="email" name="correo" id="correo" style="width:30%; height:6%" class="form-control"
-                        required placeholder="Apellido">
+                        required placeholder="Correo">
                     Telefono:
                     <input type="text" name="telefono" id="telefono" style="width:30%; height:6%" class="form-control"
                         required placeholder="Telefono">

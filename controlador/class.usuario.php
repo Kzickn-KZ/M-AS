@@ -47,7 +47,7 @@ class Usuario{
 		$db = new Conexion();
 		$valido = $this->validardoc($this->documento);
 		if ($valido) {
-			echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../vista/registro_aprendiz.php"</script>';		
+			echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../vista/registro_aprendiz.php"</script>';
 		} else {
 			$sql_insertarusuario = "INSERT INTO usuario
 			(documento,id_tipoDocumento,nombre,apellido,correo,telefono,contrasena,passadmin,passsuper,id_sede,id_programa,id_ficha,id_tipoUsuario,
@@ -62,6 +62,28 @@ class Usuario{
 			}
 		}
 }//FIN METODO insertarusuario//
+
+public function insertarsupervisor(){
+	$db = new Conexion();
+	$valido = $this->validardoc($this->documento);
+	if ($valido) {
+		echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../vista/directivo/agregarsupp.php"</script>';
+	} else {
+		$sql_insertarusuario = "INSERT INTO usuario
+		(documento,id_tipoDocumento,nombre,apellido,correo,telefono,contrasena,passadmin,passsuper,id_sede,id_programa,id_ficha,id_tipoUsuario,
+		id_rol,id_estado)
+		VALUES ('$this->documento','$this->id_tipoDocumento','$this->nombre','$this->apellido','$this->correo','$this->telefono','$this->contrasena','$this->passadmin','$this->passsuper','$this->id_sede','$this->id_programa','$this->id_ficha','$this->id_tipoUsuario','$this->id_rol','$this->id_estado')";
+		$this->db->query($sql_insertarusuario);
+		if($this->db->errno){
+			die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR EL SUPERVISOR")location.href="../vista/directivo/agregarsup.php;" </script>');
+		}else{
+			echo '<script language="javascript">alert("SE HA REGISTRADO CORRECTAMENTE UN NUEVO SUPERVISOR");';
+			echo 'location.href ="../vista/directivo/agregarsup.php"</script>';
+		}
+	}
+
+	}
+
 static function imprimirusuario($WHERE){
 $db = new Conexion();
 $sql = "SELECT usuario.id_usuario,usuario.documento, tipoDocumento.nombre as tipodedocumento, usuario.nombre, usuario.apellido, usuario.correo,usuario.telefono, sede.nombre as sede, programa.nombre as nombreprograma, ficha.nombre as ficha, tipoUsuario.nombre as programa, rol.nombre as rol, estado.nombre as estado 
