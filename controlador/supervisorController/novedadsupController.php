@@ -11,14 +11,14 @@
         include_once'../../controlador/class.notificar.php';
         $sql = Novedades::imprimirnovedad("WHERE novedades.id_usuario='$_SESSION[id_usuario]'");
 
-        echo '<div class="datagrid" style="width:75%">';
+        echo '<div class="datagrid" style="width:105%">';
                 echo '<table  id="horas" >';
                     echo'<thead>';
             echo "<th>TIPO NOVEDAD</th>";
             echo "<th>DOCUMENTO</th>";
             echo "<th>FECHA</th>";
             echo "<th>DESCRIPCION</th>";
-            echo "<th>SUPERVISOR</th>";
+            //echo "<th>SUPERVISOR</th>";
             echo "<th>ESTADO</th>";
             echo "<th>RECHAZAR</th>";
             echo "<th>ACEPTAR</th>";
@@ -32,7 +32,7 @@
         echo "<td>$arreglo[2]</td>";
         echo "<td>$arreglo[3]</td>";
         echo "<td>$arreglo[4]</td>";
-        echo "<td>$arreglo[5]</td>";
+        //echo "<td>$arreglo[5]</td>";
         echo "<td>$arreglo[6]</td>";
 
         echo "<td><a href='../../controlador/prueba.php?codigo=$arreglo[2]&estadox=2'><span class='glyphicon glyphicon-remove-circle'></a></td>";

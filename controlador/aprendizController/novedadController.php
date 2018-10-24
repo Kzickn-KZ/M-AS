@@ -6,7 +6,7 @@
                     novedad que escoja)<br></em>
                 <form action="../../controlador/ejecutanovedad.php" method="POST"><br>
                     <b>Seleccione el tipo de novedad</b>
-                    <select name="id_tipoNovedad" id="id_tipoNovedad" style="width:400px; height:40px" class="form-control"
+                    <select name="id_tipoNovedad" id="id_tipoNovedad" style="width:45%; height:8%" class="form-control"
                         required>
                         <option>Seleccione ...</option>
                         <?php
@@ -22,10 +22,9 @@
                 ?>
                     </select><br>
                     <b>Descripcion clara de la novedad</b>
-                    <textarea name="descripcion" id="descripcion" rows="10" cols="40" style="width:400px; height:100px"
-                        class="form-control" required></textarea><br>
+                    <input type="text" name="descripcion" id="descripcion" style="width:45%; height:20%" maxlength="65" class="form-control" required><br>
                     <b>Supervisor:</b>
-                    <select name="supervisor" id="supervisor" style="width:400px; height:40px" class="form-control"
+                    <select name="supervisor" id="supervisor" style="width:45%; height:8%" class="form-control"
                         required>
                         <option>Seleccione ...</option>
                         <?php

@@ -19,7 +19,7 @@
                     echo "<br>";
                     echo "<br>";
         $query=Horas::imprimirHoras("WHERE horas.documento='$_GET[codigoo]'");
-        echo '<div class="datagrid" style="width:48%">';
+        echo '<div class="datagrid" style="width:100%">';
                 echo '<table  id="horas" >';
                     echo'<thead>';
             echo "<th>Documento</th>";

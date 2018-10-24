@@ -18,11 +18,11 @@
                     <option>8</option>
                 </select><br>
                     <strong>DESCRIPCION:</strong>
-                    <br><textarea name="descripcion" id="descripcion" rows="10" cols="40" style="width:45%; height:15%"
-                        class="form-control" required></textarea><br>
+                    <input type="text" name="descripcion" id="descripcion" style="width:45%; height:20%" maxlength="50" class="form-control" required><br>
                     <strong>Seleccione instructor a cargo: </strong>
                     <select name="supervisor" id="supervisor" style="width:45%; height:8%" class="form-control"
                         required>
+                        <option>Seleccione...</option>
                         <?php
                 //CONEXION BASE DE DATOS//
         require_once "../../modelo/conexion.php";

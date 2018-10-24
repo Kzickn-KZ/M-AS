@@ -24,6 +24,7 @@ class Usuario{
 	public $id_rol;
 	public $id_estado;
 	public $db;
+
 	public function __construct($documento, $id_tipoDocumento, $nombre, $apellido, $correo,$telefono, $contrasena,$passadmin,$passsuper, $id_sede, $id_programa, $id_ficha, $id_tipoUsuario, $id_rol, $id_estado){
 		$this->id_usuario;
 		$this->documento = $documento;
@@ -69,11 +70,11 @@ public function insertarsupervisor(){
 	if ($valido) {
 		echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../vista/directivo/agregarsupp.php"</script>';
 	} else {
-		$sql_insertarusuario = "INSERT INTO usuario
+		$sql_insertarsup = "INSERT INTO usuario
 		(documento,id_tipoDocumento,nombre,apellido,correo,telefono,contrasena,passadmin,passsuper,id_sede,id_programa,id_ficha,id_tipoUsuario,
 		id_rol,id_estado)
 		VALUES ('$this->documento','$this->id_tipoDocumento','$this->nombre','$this->apellido','$this->correo','$this->telefono','$this->contrasena','$this->passadmin','$this->passsuper','$this->id_sede','$this->id_programa','$this->id_ficha','$this->id_tipoUsuario','$this->id_rol','$this->id_estado')";
-		$this->db->query($sql_insertarusuario);
+		$this->db->query($sql_insertarsup);
 		if($this->db->errno){
 			die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR EL SUPERVISOR")location.href="../vista/directivo/agregarsup.php;" </script>');
 		}else{
@@ -81,24 +82,24 @@ public function insertarsupervisor(){
 			echo 'location.href ="../vista/directivo/agregarsup.php"</script>';
 		}
 	}
-
 	}
 
 static function imprimirusuario($WHERE){
-$db = new Conexion();
-$sql = "SELECT usuario.id_usuario,usuario.documento, tipoDocumento.nombre as tipodedocumento, usuario.nombre, usuario.apellido, usuario.correo,usuario.telefono, sede.nombre as sede, programa.nombre as nombreprograma, ficha.nombre as ficha, tipoUsuario.nombre as programa, rol.nombre as rol, estado.nombre as estado 
-FROM usuario
-INNER JOIN tipoDocumento on usuario.id_tipoDocumento=tipoDocumento.id_tipoDocumento
-INNER JOIN sede on usuario.id_sede=sede.id_sede
-INNER JOIN programa on usuario.id_programa=programa.id_programa
-INNER JOIN ficha on usuario.id_ficha=ficha.id_ficha
-INNER JOIN tipoUsuario on usuario.id_tipoUsuario=tipoUsuario.id_tipoUsuario
-INNER JOIN rol on usuario.id_rol=rol.id_rol
-INNER JOIN estado on usuario.id_estado=estado.id_estado
-$WHERE;";
-$datos=$db->query($sql);
-return $datos;
+	$db = new Conexion();
+	$sql = "SELECT usuario.id_usuario,usuario.documento, tipoDocumento.nombre as tipodedocumento, usuario.nombre, usuario.apellido, usuario.correo,usuario.telefono, sede.nombre as sede, programa.nombre as nombreprograma, ficha.nombre as ficha, tipoUsuario.nombre as programa, rol.nombre as rol, estado.nombre as estado 
+			FROM usuario
+		INNER JOIN tipoDocumento on usuario.id_tipoDocumento=tipoDocumento.id_tipoDocumento
+		INNER JOIN sede on usuario.id_sede=sede.id_sede
+		INNER JOIN programa on usuario.id_programa=programa.id_programa
+		INNER JOIN ficha on usuario.id_ficha=ficha.id_ficha
+		INNER JOIN tipoUsuario on usuario.id_tipoUsuario=tipoUsuario.id_tipoUsuario
+		INNER JOIN rol on usuario.id_rol=rol.id_rol
+		INNER JOIN estado on usuario.id_estado=estado.id_estado
+		$WHERE;";
+	$datos=$db->query($sql);
+	return $datos;
 }//FIN METODO imprimirusuario//
+
 static function cambiarEstados($estado, $codigo){
 	$db= new Conexion();
 	$mensaje="ESTE APRENDIZ ESTA INACTIVO";

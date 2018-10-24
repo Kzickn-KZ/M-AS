@@ -16,7 +16,7 @@
         include '../../controlador/class.horas.php';
 
         $query=Horas::imprimirHoras("GROUP BY horas.documento DESC");
-        echo '<div class="datagrid" style="width:40%">';
+        echo '<div class="datagrid" style="width:50%">';
                 echo '<table  id="horas" >';
                     echo'<thead>';
             echo "<th>Documento</th>";

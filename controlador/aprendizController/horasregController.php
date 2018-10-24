@@ -23,7 +23,7 @@
                 ?>
                 <?php
                 $registros=Horas::imprimirHoras("WHERE horas.documento='$_SESSION[documento]' ORDER BY horas.fecha ASC");
-                echo '<div class="datagrid">';
+                echo '<div class="datagrid" style="width: 100%;">';
                 echo '<table  id="horas">';
                 echo'<thead>';
                 echo '<tr>
@@ -41,13 +41,13 @@
         echo '<td>';
         echo $reg['documento'];
         echo '</td>';
-        echo '<td>';
+        echo '<td style="width:50%;">';
         echo $reg['fecha'];
         echo '</td>';
         echo '<td>';
         echo $reg['horas_realizadas'];
         echo '</td>';
-        echo '<td style="30%">';
+        echo '<td style="width:50%;">';
         echo $reg['descripcion'];
         echo '</td>';
         echo '<td>';

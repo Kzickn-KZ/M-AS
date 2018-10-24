@@ -16,7 +16,7 @@
 
                     $query = Proyecto::verproyectos("");
 
-                echo '<div class="datagrid" style="width:80%">';
+                echo '<div class="datagrid" style="width:90%">';
                 echo '<table  id="horas" >';
                 echo'<thead>';
                 echo "<th>Documento</th>";

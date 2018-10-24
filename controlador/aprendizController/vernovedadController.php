@@ -10,7 +10,7 @@
                 include_once '../../modelo/conexion.php';
                 include_once '../../controlador/class.notificar.php';
     $consulta=Novedades::imprimirnovedad("WHERE novedades.documento='$_SESSION[documento]'");
-    echo '<div class="datagrid" style="width:60%">';
+    echo '<div class="datagrid" style="width:100%">';
                 echo '<table  id="horas" >';
                 echo'<thead>';
                 echo '<tr>
@@ -34,7 +34,7 @@
                     echo '<td>';
                     echo $reg['fecha'];
                     echo '</td>';
-                    echo '<td>';
+                    echo '<td style="width:50%">';
                     echo $reg['descripcion'];
                     echo '</td>';
                     echo '<td>';

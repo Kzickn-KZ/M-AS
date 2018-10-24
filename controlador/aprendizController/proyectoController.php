@@ -26,19 +26,18 @@ $chek = Proyecto::printrow("WHERE documento='$_SESSION[documento]' and id_estado
             echo '
             <form method="post" action="../../controlador/ejecutaproyecto.php">
                     Fecha de inicio:
-                    <input type="date" name="fechainicio" id="fechainicio" style="width:400px; height:40px" class="form-control"
+                    <input type="date" name="fechainicio" id="fechainicio" style="width:45%; height:8%" class="form-control"
                         required><br>
                     Fecha de terminacion:
-                    <input type="date" name="fechafinal" id="fechafinal" style="width:400px; height:40px" class="form-control"
+                    <input type="date" name="fechafinal" id="fechafinal" style="width:45%; height:8%" class="form-control"
                         required><br>
                     Nombre del proyecto:
-                    <input type="text" name="nombre" id="nombre" style="width:400px; height:40px" class="form-control"
+                    <input type="text" name="nombre" id="nombre" style="width:45%; height:8%" class="form-control"
                         required><br>
                     Descripcion:
-                    <textarea name="descripcion" id="descripcion" rows="10" cols="40" style="width:400px; height:50px"
-                        class="form-control" required></textarea><br>
+                    <input type="text" name="descripcion" id="descripcion" style="width:45%; height:8%" maxlength="50" class="form-control" required><br>
                     Supervisor a cargo:
-                    <select name="supervisor" id="supervisor" style="width:400px; height:40px" class="form-control"
+                    <select name="supervisor" id="supervisor" style="width:45%; height:8%" class="form-control"
                         required>
                         ';
                 //CONEXION BASE DE DATOS//
