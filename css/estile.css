@@ -1,0 +1,255 @@
+#contenedor {
+  margin-left: 2%;
+  float: left;
+  display: inline-block;
+  width: 20%;
+  height: 600px;
+}
+#contenido {
+  height: 600px;
+  margin-left: 25%;
+  margin-right: 3%;
+  right: 22%;
+  overflow: auto;
+  position: relative;
+  top: 40%;
+}
+#pdfico {
+  width: 15%;
+  right: 50%;
+  position: absolute;
+  left: 89%;
+  top: 3%;
+}
+
+.datagrid table {
+  border-collapse: collapse;
+  text-align: left;
+}
+.datagrid {
+  font: normal 12px/150% Geneva, Arial, Helvetica, sans-serif;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #991821;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.datagrid table td,
+.datagrid table th {
+  padding: 4px 12px;
+}
+.datagrid table thead th {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #991821),
+    color-stop(1, #80141c)
+  );
+  background: -moz-linear-gradient(center top, #991821 5%, #80141c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#991821', endColorstr='#80141C');
+  background-color: #991821;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border-left: 1px solid #b01c26;
+}
+.datagrid table thead th:first-child {
+  border: none;
+}
+.datagrid table tbody td {
+  color: #80141c;
+  font-size: 15px;
+  font-weight: normal;
+}
+.datagrid table tbody .alt td {
+  background: #f4f4f4;
+  color: #80141c;
+}
+.datagrid table tbody td:first-child {
+  border-left: none;
+}
+.datagrid table tbody tr:last-child td {
+  border-bottom: none;
+}
+.datagrid table tfoot td div {
+  border-top: 1px solid #991821;
+  background: #f7cdcd;
+}
+.datagrid table tfoot td {
+  padding: 0;
+  font-size: 16px;
+}
+.datagrid table tfoot td div {
+  padding: 7px;
+}
+.datagrid table tfoot td ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+}
+.datagrid table tfoot li {
+  display: inline;
+}
+.datagrid table tfoot li a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 1px;
+  color: #ffffff;
+  border: 2px solid #991821;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #991821),
+    color-stop(1, #80141c)
+  );
+  background: -moz-linear-gradient(center top, #991821 5%, #80141c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#991821', endColorstr='#80141C');
+  background-color: #991821;
+}
+.datagrid table tfoot ul.active,
+.datagrid table tfoot ul a:hover {
+  text-decoration: none;
+  border-color: #80141c;
+  color: #ffffff;
+  background: none;
+  background-color: #991821;
+}
+div.dhtmlx_window_active,
+div.dhx_modal_cover_dv {
+  position: fixed !important;
+}
+
+.onoffswitch {
+  position: relative;
+  width: 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+  display: none;
+}
+
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 30px;
+  padding: 0;
+  line-height: 36px;
+  border: 2px solid #e3e3e3;
+  border-radius: 36px;
+  background-color: #ff0000;
+  transition: background-color 0.3s ease-in;
+}
+
+.onoffswitch-label:before {
+  content: "";
+  display: block;
+  width: 36px;
+  margin: 0px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 22px;
+  border: 2px solid #e3e3e3;
+  border-radius: 36px;
+  transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+  background-color: #49e845;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label,
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+  border-color: #49e845;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+  right: 0px;
+}
+#modal {
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.5s;
+}
+#modal p {
+  width: 60%;
+  height: 40%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#mostrar-modal {
+  display: none;
+}
+#mostrar-modal + label {
+  background: steelblue;
+  display: table;
+  margin: auto;
+  color: #fff;
+  line-height: 3;
+  padding: 0 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#mostrar-modal + label:hover {
+  background: #38678f;
+}
+#mostrar-modal:checked ~ #modal {
+  top: 0;
+}
+
+#cerrar-modal {
+  display: none;
+}
+#cerrar-modal + label {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  z-index: 100;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  background: tomato;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+#cerrar-modal:checked ~ #modal {
+  top: -100vh;
+}
+#cerrar-modal + label {
+  display: none;
+}
+#mostrar-modal:checked ~ #cerrar-modal + label {
+  display: block;
+}
+#cerrar-modal:checked + label {
+  display: none;
+}
