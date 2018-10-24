@@ -3,7 +3,7 @@
                 <h3><strong>TABLA PARA CITAR APRENDICES</strong></h3>
                 <em>(En esta tabla podra citar a el aprendiz seleccionado)</em></acronym>
                 <div id="pdfico">
-                <a href=""><img src="../img/pdf.png" style="Width:20%;"></a>
+                <a href=""><img src="../../img/pdf.png" style="Width:20%;"></a>
                 </div>
                 <br><br>
                 <form name="form1" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="cdr" >

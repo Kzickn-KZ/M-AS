@@ -57,7 +57,7 @@ class Usuario{
 			if($this->db->errno){
 				die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR")location.href="../vista/registro_aprendiz.php;" </script>');
 			}else{
-				echo '<script language="javascript">alert("SE HA REGISTRADO CORRECTAMENTE, AHORA PUEDES LOGUEAR");';
+				echo '<script language="javascript">alert("SE HA REGISTRADO CORRECTAMENTE, ENTRASTE A UN PROCESO DE SELECCION, EN UNOS DIAS TE CONFIRMARAN Y PODRAS ACCEDER A EL SISTEMA");';
 				echo 'location.href ="../index.html"</script>';
 			}
 		}
