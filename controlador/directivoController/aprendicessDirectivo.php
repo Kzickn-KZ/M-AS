@@ -22,15 +22,16 @@
                 echo'<thead>';
                 echo "<th>Documento</th>";
                 //echo "<th>Tipo de documento</th>";
-                echo "<th>Nombre</th>";
+                //echo "<th>Nombre</th>";
                 echo "<th>Correo</th>";
                 echo "<th>Telefono</th>";
                 //echo "<th>contraseña</th>";
                 echo "<th>Sede</th>";
                 echo "<th>Programa</th>";
                 //echo "<th>Ficha</th>";
-                echo "<th>Tipo</th>";
+                echo "<th>Ficha</th>";
                 //echo "<th>Rol</th>";
+                echo "<th>Programa</th>";
                 echo "<th>Estado</th>";
 
                 echo "<th>Habilitar</th>";
@@ -45,16 +46,17 @@
                         $arreglo[0];
                         echo "<td>$arreglo[1]</td>";
                         //echo "<td>$arreglo[2]</td>";
-                        echo "<td>$arreglo[3]</td>";
+                        //echo "<td>$arreglo[3]</td>";
                         //echo "<td>$arreglo[4]</td>";
                         echo "<td>$arreglo[5]</td>";
                         echo "<td>$arreglo[6]</td>";
-                        echo "<td>$arreglo[7]</td>";
-                        //echo "<td>$arreglo[8]</td>";
+                        //echo "<td>$arreglo[7]</td>";
+                        echo "<td>$arreglo[8]</td>";
                         echo "<td>$arreglo[9]</td>";
-                        //echo "<td>$arreglo[10]</td>";
+                        echo "<td>$arreglo[10]</td>";
                         echo "<td>$arreglo[11]</td>";
-                        echo "<td>$arreglo[12]</td>";
+                        //echo "<td>$arreglo[12]</td>";
+                        echo "<td>$arreglo[13]</td>";
 
                         echo "<td><a href='../../controlador/prueba.php?codigo=$arreglo[0]&usuha=2'><span class='glyphicon glyphicon-ok'></a></td>";
                         echo "<td><a href='../../controlador/prueba.php?codigo=$arreglo[0]&usuin=2'><span class='glyphicon glyphicon-remove'></a></td>";

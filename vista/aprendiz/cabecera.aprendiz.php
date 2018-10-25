@@ -60,7 +60,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="">
+                                        <a href="updateuser.php">
                                             <span class="glyphicon glyphicon-user"></a>
                                     </li>
                                     <!--------------------------------------------->

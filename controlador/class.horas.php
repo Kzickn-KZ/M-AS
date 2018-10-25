@@ -28,10 +28,14 @@ class Horas{
 		$this->db=new Conexion();
 	}//fin constructor//
 
+
+
+
+
 	//inicio metodo insertarhoras//
 	public function insertarhoras(){
-		$db = new Conexion();
-		$sql = "INSERT INTO horas(documento,fecha,horas_realizadas,descripcion,id_usuario,id_estado)
+				$db = new Conexion();
+				$sql = "INSERT INTO horas(documento,fecha,horas_realizadas,descripcion,id_usuario,id_estado)
         		VALUES ('$this->documento','$this->fecha','$this->horas_realizadas',
         		'$this->descripcion','$this->id_usuario','$this->id_estado');";
 				$this->db->query($sql);
@@ -43,9 +47,15 @@ class Horas{
 					}
 	}//fin metodo insertarhoras//
 
+
+
+
+
+
+
 	//inicio metodo inprimirHoras//
 	static function imprimirHoras($WHERE){
-        $db = new Conexion();
+       	 	$db = new Conexion();
             $sql="SELECT  horas.id_horas, horas.documento, horas.fecha, horas.horas_realizadas, horas.descripcion,
             usuario.nombre as nombresupervisor, estado.nombre as nombreestado
             FROM  horas
@@ -55,6 +65,11 @@ class Horas{
             $datos=$db->query($sql);
             return $datos;
 }//FIN FUNCION inprimirHoras//
+
+
+
+
+
 
 static function cambiarEstado($estado, $codigo){
             $db = new Conexion();
@@ -68,12 +83,17 @@ static function cambiarEstado($estado, $codigo){
     	echo "<script>location.href='../vista/supervisor/inicio_supervisor.php'</script>";
 }//FIn metodo cambiarEstado//
 
+
+
+
+
+
 static function sumadehoras($WHERE){
-$db = new Conexion();
-$sql = "SELECT SUM(horas_realizadas) as horitas , id_estado FROM horas $WHERE";
-$datos = $db->query($sql);
-return $datos;
-}//FIN METODO SUMADEHORAS//
+		$db = new Conexion();
+		$sql = "SELECT SUM(horas_realizadas) as horitas , id_estado FROM horas $WHERE";
+		$datos = $db->query($sql);
+		return $datos;
+		}//FIN METODO SUMADEHORAS//
 
 } //fin class horas//
 ?>
