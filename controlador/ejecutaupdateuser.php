@@ -16,8 +16,7 @@ $id_ficha = $_POST['id_ficha'];
 $id_tipoUsuario = $_POST['id_tipoUsuario'];
 $id_rol = 1;
 $id_estado = 1;
-$Usuario = new Usuario($documento, $id_tipoDocumento, $nombre, $apellido, $correo,$telefono, $contrasena,"","",$passadmin,$passsuper, $id_sede, $id_programa, $id_ficha, $id_tipoUsuario, $id_rol, $id_estado);
+$Usuario = new Usuario($documento, $id_tipoDocumento, $nombre, $apellido, $correo,$telefono, $contrasena,"","", $id_sede, $id_programa, $id_ficha, $id_tipoUsuario, $id_rol, $id_estado);
 $Usuario->updateuser($id_usuario);
 
 ?>
-

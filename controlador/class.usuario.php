@@ -158,7 +158,7 @@ static  function validardoc($documento){
 
 
 //METODO ACTUALIZACION DE EL ROL USUARIO//
-public function updateuser($id_usuario){
+public  function updateuser($id_usuario){
 										$db = new Conexion();
 										$sql_upuser = "UPDATE usuario SET documento='$this->documento',
 										id_tipoDocumento='$this->id_tipoDocumento',
@@ -176,26 +176,16 @@ public function updateuser($id_usuario){
 										id_rol='$this->id_rol',
 										id_estado='$this->id_estado'
 										WHERE id_usuario='$id_usuario'";
-		$this->db->query($sql_upuser);
-		if($this->db->errno){
-		    die('<script language="javascript">alert("No se an podido actualizar los datos");location.href="../vista/aprendiz/updateuser.php"</script>');
-		}else{
-			echo '<script language="javascript">alert("SE HA ACTUALIZADO CORRECTAMENTE");</script>';
-			echo '<script>location.href="../index.html"</script>';
+				$this->db->query($sql_upuser);
+				if($this->db->errno){
+		    	die('<script language="javascript">alert("No se an podido actualizar los datos");location.href="../vista/aprendiz/updateuser.php"</script>');
+				}else{
+				echo '<script language="javascript">alert("SE HA ACTUALIZADO CORRECTAMENTE");</script>';
+				echo '<script>location.href="../index.html"</script>';
 		}
-
 	}
+
 	//FIN METODO UPDATEUSER//
-
-
-
-
-
-
-
-
-
-
 
 
 
