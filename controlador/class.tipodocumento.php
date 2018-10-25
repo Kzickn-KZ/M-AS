@@ -1,5 +1,6 @@
 <?php
 include_once '../modelo/conexion.php';
+
 class Tipodocumento{
 	public $id_tipoDocumento;
 	public $nombre;

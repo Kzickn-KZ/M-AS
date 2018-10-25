@@ -1,5 +1,7 @@
 <?php
+
 include_once '../modelo/conexion.php';
+
 class sede{
 	public $id_sede;
 	public $nombre;

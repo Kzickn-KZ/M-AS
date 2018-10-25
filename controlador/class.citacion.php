@@ -5,6 +5,7 @@ ini_set('display_startup_errors','off');
 error_reporting(0);
 
 include_once '../modelo/conexion.php';
+
 class Citacion{
 public $id_citacion;
 public $id_usuario;

@@ -3,6 +3,7 @@
 ini_set('display_errors','off');
 ini_set('display_startup_errors','off');
 error_reporting(0);
+
 include_once '../modelo/conexion.php';
 
 class ficha{

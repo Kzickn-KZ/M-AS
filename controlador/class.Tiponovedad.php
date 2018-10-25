@@ -1,5 +1,6 @@
 <?php
 	include_once '../controlador/conexion.php';
+
 	class Tiponovedad{
 	public $id_tipoNovedad;
 	public $nombre;
