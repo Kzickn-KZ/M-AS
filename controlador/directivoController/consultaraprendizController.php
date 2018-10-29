@@ -2,10 +2,6 @@
             <center>
                 <h3><strong>TABLA PARA CITAR APRENDICES</strong></h3>
                 <em>(En esta tabla podra citar a el aprendiz seleccionado)</em></acronym>
-                <div id="pdfico">
-                <a href=""><img src="../../img/pdf.png" style="Width:20%;"></a>
-                </div>
-                <br><br>
                 <form name="form1" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="cdr" >
                     <p><input name="T1"  type="text" style="width:30%; height:5%" class="form-control" size="20"></p>
                     <input  name="buscar" type="submit" id="buscar" value="buscar" class="btn btn-lg btn-primary btn-block btn-sm" style="width: 100px"/>

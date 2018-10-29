@@ -109,7 +109,7 @@ public function insertarsupervisor(){
 		//INICIO METODO IMPRIMIR USUARIO//
 	static function imprimirusuario($WHERE){
 		$db = new Conexion();
-		$sql = "SELECT usuario.id_usuario,usuario.documento, tipoDocumento.nombre as tipodedocumento, usuario.nombre, usuario.apellido, usuario.correo,usuario.telefono,usuario.contrasena ,sede.nombre as sede, programa.nombre as nombreprograma, ficha.nombre as ficha, tipoUsuario.nombre as programa, rol.nombre as rol, estado.nombre as estado FROM usuario
+		$sql = "SELECT usuario.id_usuario,usuario.documento, tipoDocumento.nombre as tipodedocumento, usuario.nombre, usuario.apellido, usuario.correo ,usuario.telefono,usuario.contrasena,usuario.passadmin,usuario.passsuper,sede.nombre as sede, programa.nombre as nombreprograma, ficha.nombre as ficha, tipoUsuario.nombre as programa, rol.nombre as rol, estado.nombre as estado FROM usuario
 		INNER JOIN tipoDocumento on usuario.id_tipoDocumento=tipoDocumento.id_tipoDocumento
 		INNER JOIN sede on usuario.id_sede=sede.id_sede
 		INNER JOIN programa on usuario.id_programa=programa.id_programa

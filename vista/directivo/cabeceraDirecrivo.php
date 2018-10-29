@@ -64,7 +64,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="">
+                                        <a href="updateadmin.php">
                                             <span class="glyphicon glyphicon-user"></a>
                                     </li>
                                     <li class="nav navbar-navl">

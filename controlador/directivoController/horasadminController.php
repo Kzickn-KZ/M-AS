@@ -3,9 +3,6 @@
 
                 <h3><strong>TABLA VER HORAS DE APRENDICES</strong></h3>
                 <em>(aca podra ver a todos los aprendices para verificar sus horas)</em></acronym>
-                <div id="pdfico">
-                <img src="../../img/pdf.png" style="Width:20%;">
-                </div><br><br>
                 <form name="form1" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="cdr" >
                     <p><input name="T1"  type="text" style="width:30%; height:5%" class="form-control" size="20"></p>
                     <input  name="buscar" type="submit" id="buscar" value="buscar" class="btn btn-lg btn-primary btn-block btn-sm" style="width: 100px"/>

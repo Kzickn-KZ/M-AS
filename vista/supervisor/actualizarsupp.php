@@ -1,0 +1,13 @@
+<?php
+session_start();
+include_once'cabeceraSup.php';
+?>
+<?php
+include_once'contenedorSup.php';
+?>
+<?php
+include_once'../../controlador/supervisorController/actualizaSupcontroller.php';
+?>
+<?php
+include_once'finSup.php';
+?>
