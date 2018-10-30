@@ -19,7 +19,7 @@
                     echo "<br>";
                     echo "<br>";
         $query=Horas::imprimirHoras("WHERE horas.documento='$_GET[codigoo]' and tok=0");
-        echo '<div class="datagrid" style="width:100%">';
+        echo '<div class="datagrid" style="width:100%;">';
                 echo '<table  id="horas" >';
                     echo'<thead>';
             echo "<th>Documento</th>";
@@ -43,12 +43,13 @@
         echo "</tr>";
         }
         echo "</table>";
-        echo "<br>";
             ?>
             </center>
             <br>
             <?php
+            if ($horitas>=$horastotales) {
             echo "<a href='../../controlador/prueba.php?codigo=$_GET[codigoo]&codigotok=2'><img src='../../img/aceptar.png' class='img-rounded'/></a>";
+            }
             ?>
             <br>
             <br>
