@@ -13,7 +13,6 @@
                 <?php
                     include_once'../../controlador/class.proyecto.php';
                     include_once'../../modelo/Conexion.php';
-
                     $query = Proyecto::verproyectos("");
 
                 echo '<div class="datagrid" style="width:90%">';
@@ -54,9 +53,6 @@
                     echo $reg['nombreestado'];
                     echo "<td><a href='../../controlador/prueba.php?codigo=$reg[id_proyecto]&codigoaceptar=2'><span class='glyphicon glyphicon-ok-circle'></a></td>";
                     echo "<td><a href='../../controlador/prueba.php?codigo=$reg[id_proyecto]&codigocancelar=2'><span class='glyphicon glyphicon-remove-circle'></a></td>";
-
-
-
                     }
                     echo "</table>";
 

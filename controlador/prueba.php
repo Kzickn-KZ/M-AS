@@ -79,6 +79,14 @@ extract($_GET);
               $id=$_REQUEST['codigo'];
           Usuario::cambiarEstados(1, $id);
         }
+      //TOK//
+        extract($_GET);
+        if(@$codigotok==2){
+        $codigo = $_REQUEST['codigo'];
+        $tok = 1;
+        Horas::cambiartok($tok, $codigo);
+        }
+
 
 
 

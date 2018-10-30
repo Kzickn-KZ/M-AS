@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 24-10-2018 a las 14:55:14
+-- Tiempo de generación: 30-10-2018 a las 14:57:51
 -- Versión del servidor: 5.7.23
 -- Versión de PHP: 7.2.10
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `citacion` (
   `id_sede` int(11) NOT NULL,
   `ambiente` varchar(20) NOT NULL,
   PRIMARY KEY (`id_citacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `citacion`
@@ -47,7 +47,8 @@ CREATE TABLE IF NOT EXISTS `citacion` (
 INSERT INTO `citacion` (`id_citacion`, `id_usuario`, `citador`, `fecha`, `hora`, `id_sede`, `ambiente`) VALUES
 (3, 12, '0', '2018-10-12', '06:45:00', 2, '205'),
 (4, 10, '0', '2018-10-25', '01:50:00', 2, '205'),
-(5, 10, '0', '2018-10-27', '12:30:00', 2, '205');
+(5, 10, '0', '2018-10-27', '12:30:00', 2, '205'),
+(6, 10, '0', '2018-10-19', '12:30:00', 3, '205');
 
 -- --------------------------------------------------------
 
@@ -113,15 +114,18 @@ CREATE TABLE IF NOT EXISTS `horas` (
   `descripcion` text NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_estado` int(11) NOT NULL,
+  `tok` int(11) NOT NULL,
   PRIMARY KEY (`id_horas`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `horas`
 --
 
-INSERT INTO `horas` (`id_horas`, `documento`, `fecha`, `horas_realizadas`, `descripcion`, `id_usuario`, `id_estado`) VALUES
-(80, '123', '2018-10-24', 3, 'hola jeje', 9, 4);
+INSERT INTO `horas` (`id_horas`, `documento`, `fecha`, `horas_realizadas`, `descripcion`, `id_usuario`, `id_estado`, `tok`) VALUES
+(117, '123', '2018-10-30', 8, 'prueba1', 9, 3, 0),
+(118, '123', '2018-10-30', 8, 'prueba2', 9, 4, 0),
+(119, '123', '2018-10-30', 3, 'prueba3', 9, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -139,14 +143,7 @@ CREATE TABLE IF NOT EXISTS `novedades` (
   `id_usuario` int(11) NOT NULL,
   `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_novedades`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `novedades`
---
-
-INSERT INTO `novedades` (`id_novedades`, `id_tipoNovedad`, `documento`, `fecha`, `descripcion`, `id_usuario`, `id_estado`) VALUES
-(25, 3, '123', '2018-10-24', 'asfd', 9, 3);
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -158,6 +155,7 @@ DROP TABLE IF EXISTS `programa`;
 CREATE TABLE IF NOT EXISTS `programa` (
   `id_programa` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) NOT NULL,
+  `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_programa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -165,9 +163,9 @@ CREATE TABLE IF NOT EXISTS `programa` (
 -- Volcado de datos para la tabla `programa`
 --
 
-INSERT INTO `programa` (`id_programa`, `nombre`) VALUES
-(1, 'ADSI'),
-(2, 'TPS');
+INSERT INTO `programa` (`id_programa`, `nombre`, `id_estado`) VALUES
+(1, 'ADSI', 0),
+(2, 'TPS', 0);
 
 -- --------------------------------------------------------
 
@@ -186,14 +184,7 @@ CREATE TABLE IF NOT EXISTS `proyecto` (
   `id_usuario` int(11) NOT NULL,
   `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_proyecto`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `proyecto`
---
-
-INSERT INTO `proyecto` (`id_proyecto`, `documento`, `fechainicio`, `fechafinal`, `nombre`, `descripcion`, `id_usuario`, `id_estado`) VALUES
-(12, 123, '2018-10-24', '2018-10-25', 'MASS', 'asd', 9, 2);
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -307,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `tipousuario` (
 
 INSERT INTO `tipousuario` (`id_tipoUsuario`, `nombre`, `id_estado`) VALUES
 (1, 'Monitorias', 1),
-(2, 'Apoyo sostenimiento', 0);
+(2, 'Apoyo sostenimiento', 1);
 
 -- --------------------------------------------------------
 
@@ -334,19 +325,17 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `id_rol` varchar(20) NOT NULL,
   `id_estado` varchar(20) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `documento`, `id_tipoDocumento`, `nombre`, `apellido`, `correo`, `telefono`, `contrasena`, `passadmin`, `passsuper`, `id_sede`, `id_programa`, `id_ficha`, `id_tipoUsuario`, `id_rol`, `id_estado`) VALUES
-(1, 0, '', 'ADMIN', 'ADMIN', '', '0', '', 'adminpost', '', '', '', '', '', '3', '1'),
-(9, 555, '1', 'supervisor', 'supervisor', '', '123', '', '', '555', '2', '1', '1', '1', '2', '1'),
-(10, 123, '1', 'usuario', 'usuario', '', '666', '123', '', '', '3', '1', '1', '1', '1', '1'),
-(12, 1234, '1', 'prueba', 'prueba', '', '1234', '1234', '', '', '2', '1', '1', '1', '1', '2'),
-(16, 1233511946, '1', 'edwin', 'aguilar', 'kzickn@gmail.com', '3123732829', 'loca123', '', '', '2', '1', '1', '1', '1', '1'),
-(17, 55545634, '1', '234234', 'aguilar', 'kzickn@gmail.com', '3123732829', '', '', '', '2', '1', '1', '1', '1', '5');
+(1, 0, '2', 'ADMINnnnnn', 'ADMINnnnnn', 'admin@gmail.com', '0', '', 'adminpost', '', '3', '1', '1', '1', '3', '1'),
+(9, 555, '2', 'supervisor', 'supervisor', 'supp@gmail.com', '123', '', '', '555', '2', '1', '1', '1', '2', '1'),
+(27, 123, '1', 'usuario', 'usuario', 'user@gailc.c', '1233', '123', '', '', '2', '1', '4', '2', '1', '1'),
+(29, 1233511946, '1', 'edw', 'edew', 'ea@gmail.com', '123123', '123', '', '', '2', '1', '1', '1', '1', '5');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

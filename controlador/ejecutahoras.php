@@ -7,6 +7,7 @@ $horas_realizadas = $_POST['hora'];
 $descripcion = $_POST['descripcion'];
 $id_usuario = $_POST['supervisor'];
 $id_estado = 5;
-$Horas = new Horas($documento,$fecha,$horas_realizadas,$descripcion,$id_usuario,$id_estado);
+$tok = 0;
+$Horas = new Horas($documento,$fecha,$horas_realizadas,$descripcion,$id_usuario,$id_estado,$tok);
 $Horas->insertarhoras();
 ?>

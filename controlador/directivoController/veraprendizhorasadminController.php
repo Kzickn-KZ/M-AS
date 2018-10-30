@@ -6,7 +6,7 @@
                 <?php
         include '../../modelo/Conexion.php';
         include_once '../../controlador/class.horas.php';
-                    $sql = Horas::sumadehoras("WHERE documento='$_GET[codigoo]' and id_estado=3");
+                    $sql = Horas::sumadehoras("WHERE documento='$_GET[codigoo]' and id_estado=3 and tok=0");
                     $fila=$sql->fetch_assoc();
                     $horitas=$fila['horitas'];
                     $horastotales= 40;
@@ -18,7 +18,7 @@
                     }
                     echo "<br>";
                     echo "<br>";
-        $query=Horas::imprimirHoras("WHERE horas.documento='$_GET[codigoo]'");
+        $query=Horas::imprimirHoras("WHERE horas.documento='$_GET[codigoo]' and tok=0");
         echo '<div class="datagrid" style="width:100%">';
                 echo '<table  id="horas" >';
                     echo'<thead>';
@@ -43,8 +43,13 @@
         echo "</tr>";
         }
         echo "</table>";
+        echo "<br>";
             ?>
             </center>
+            <br>
+            <?php
+            echo "<a href='../../controlador/prueba.php?codigo=$_GET[codigoo]&codigotok=2'><img src='../../img/aceptar.png' class='img-rounded'/></a>";
+            ?>
             <br>
             <br>
             <div class="row-f luid">

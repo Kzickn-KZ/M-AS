@@ -8,7 +8,7 @@
                 <?php
                 include_once '../../controlador/class.horas.php';
                 include_once'../../modelo/Conexion.php';
-                $sql = Horas::sumadehoras("WHERE documento='$_SESSION[documento]' and id_estado=3");
+                $sql = Horas::sumadehoras("WHERE documento='$_SESSION[documento]' and id_estado=3 and tok=0");
 				$fila=$sql->fetch_assoc();
                 $horitas=$fila['horitas'];
 				$horastotales= 40;
@@ -22,7 +22,7 @@
                 echo "<br>";
                 ?>
                 <?php
-                $registros=Horas::imprimirHoras("WHERE horas.documento='$_SESSION[documento]' ORDER BY horas.fecha ASC");
+                $registros=Horas::imprimirHoras("WHERE horas.documento='$_SESSION[documento]' and tok=0 ORDER BY horas.fecha ASC");
                 echo '<div class="datagrid" style="width: 100%;">';
                 echo '<table  id="horas">';
                 echo'<thead>';
