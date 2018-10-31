@@ -1,6 +1,9 @@
+<!----SEGURIDAD----->
+<?php
+include_once'seguridadsupervisor.php';
+?>
 <!---------CABECERA--------->
 <?php
-session_start();
 include_once'cabeceraSup.php';
 ?>
 <!---------------CONTENEDORES---------------->

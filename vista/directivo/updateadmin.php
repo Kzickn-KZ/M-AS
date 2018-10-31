@@ -1,5 +1,9 @@
+
+<!----SEGURIDAD----->
 <?php
-session_start();
+include_once'seguridaddirectivo.php';
+?>
+<?php
 include_once'cabeceraDirecrivo.php';
 ?>
 <?php

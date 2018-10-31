@@ -1,6 +1,9 @@
+<!----SEGURIDAD----->
+<?php
+include_once'seguridadaprendiz.php';
+?>
 <!---CABECERA---->
 <?php
-session_start();
 include_once'cabecera.aprendiz.php';
 ?>
 <!---CONTENEDOR---->

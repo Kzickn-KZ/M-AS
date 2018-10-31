@@ -6,7 +6,7 @@
 
     <title> M&AS </title>
 
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="" rel="stylesheet">
     <link href="../../css/estile.css" rel="stylesheet">
     <link href="../../css/business-casual.css" rel="stylesheet">
     <link rel="shortcut icon" href="../../img/icono.png">

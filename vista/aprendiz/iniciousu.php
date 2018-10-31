@@ -1,3 +1,7 @@
+<!----SEGURIDAD----->
+<?php
+include_once'seguridadaprendiz.php';
+?>
 <!-------CABECERA------>
 <?php
 include_once'cabecera.aprendiz.php';

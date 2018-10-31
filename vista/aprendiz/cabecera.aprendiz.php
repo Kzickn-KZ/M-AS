@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Manejo de monitorias y apoyo de sostenimiento para aprendices de el sena que quieran aplicar">
     <title> M&AS </title>
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="" rel="stylesheet">
     <link href="../../css/estile.css" rel="stylesheet">
     <link href="../../css/business-casual.css" rel="stylesheet">
     <link rel="shortcut icon" href="../../img/icono.png">
@@ -12,7 +12,9 @@
         rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
         rel="stylesheet" type="text/css">
+        <script type="text/javascript" charset="utf-8" src="../../js/atras.js"></script>
 </head>
+<body onload="deshabilitaRetroceso()">.....</body>
 <body>
     <br>
     <br>

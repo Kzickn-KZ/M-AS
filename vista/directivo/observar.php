@@ -1,10 +1,13 @@
+<!----SEGURIDAD----->
+<?php
+include_once'seguridaddirectivo.php';
+?>
 <!------------CABECERA------------>
 <?php
-session_start();
 include_once'cabeceraDirecrivo.php';
 ?>
     <!---------------CONTENEDORES---------------->
-    <?php
+<?php
 include_once'contenedorDirectivo.php';
 ?>
 <!------------CONTENEDOR PRINCIPAL------------>
