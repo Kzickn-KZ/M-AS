@@ -44,10 +44,10 @@ class Proyecto{
 			VALUES ('$this->documento','$this->fechainicio','$this->fechafinal','$this->nombre','$this->descripcion','$this->id_usuario','$this->id_estado')";
 			$this->db->query($sql);
 			if ($this->db->errno) {
-			die('<script language="javascript">alert("NO SE HA PODIDO AÑADIR PROYECTO");location.href="../vista/aprendiz/proyecto.php"</script>');
+			die('<script language="javascript">alert("NO SE HA PODIDO AÑADIR PROYECTO");location.href="../views/aprendiz/proyecto.php"</script>');
 			}else{
 			echo '<script language="javascript">alert("SE REGISTRO EL PROYECTO CORRECTAMENTE");';
-			echo 'location.href="../vista/aprendiz/proyecto.php"</script>';
+			echo 'location.href="../views/aprendiz/proyecto.php"</script>';
 		}
 	}//FIN METODO INSERTAR PROYECTO//
 
@@ -85,9 +85,9 @@ class Proyecto{
         	$mensaje="ESTE PROYECTO SE A CAMBIADO A ACTIVADO";
         	}
 			$sql="UPDATE proyecto SET id_estado='$estado' WHERE id_proyecto=$codigo";
-        	$db->query($sql);
+			$db->query($sql);
        	 	echo ' <script language="javascript">alert("'.$mensaje.'");</script> ';
-        	echo "<script>location.href='../vista/directivo/proyectoadmin.php'</script>";
+        	echo "<script>location.href='../views/supervisor/verproyectos.php'</script>";
 	}//FIN METODO CAMBIAR ESTADO
 
 

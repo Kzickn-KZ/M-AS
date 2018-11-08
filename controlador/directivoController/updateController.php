@@ -1,5 +1,5 @@
-<div class="box" id="contenido">
-            <center>
+
+            <center><br>
 
                 <h3><strong>TABLA ACTUALIZAR DATOS</strong></h3>
                 <em>(Actualziar datos)</em></acronym>
@@ -66,20 +66,9 @@
                     <input type="submit" name="button" id="button" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm"
                 style="width:5%" />
 
-                    </form>
+                    </form><br>
                 <?php
                 }
                 ?>
 
-            </center>
-            <br>
-            <br>
-            <div class="row-f luid">
-                <div class="span8">
-                </div>
-            </div>
-            <br />
-    </center>
-    </div>
-
-    </center>
+            

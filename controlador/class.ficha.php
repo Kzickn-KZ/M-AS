@@ -27,10 +27,10 @@ class ficha{
 			$sql = "INSERT INTO ficha (nombre, id_estado) VALUES ('$this->nombre','$this->id_estado')";
 			$this->db->query($sql);
 			if ($this->db->errno) {
-			die ('<script language="javascript">alert("NO SE HA PODIDO REGISTRAR LA FICHA");location.href="../vista/agregarficha.php"</script>');
+			die ('<script language="javascript">alert("NO SE HA PODIDO REGISTRAR LA FICHA");location.href="../views/agregarficha.php"</script>');
 			}else{
 			echo '<script language="javascript">alert("SE HA REGISTRADO LA FICHA CORRECTAMENTE");';
-			echo 'location.href="../vista/agregarficha.php"</script>';
+			echo 'location.href="../views/agregarficha.php"</script>';
 		}
 	}//FIN METODO insertarficha//
 
@@ -61,7 +61,7 @@ static function cambiarestado($estado, $codigo){
 				$sql="UPDATE ficha SET id_estado='$estado' WHERE id_ficha=$codigo";
        		 $db->query($sql);
        		 echo ' <script language="javascript">alert("'.$mensaje.'");</script> ';
-        	echo "<script>location.href='../vista/directivo/agregarficha.php'</script>";
+        	echo "<script>location.href='../views/directivo/agregarficha.php'</script>";
 }//fin metodo cambiarestado//
 }//FIN CLASE//
 ?>

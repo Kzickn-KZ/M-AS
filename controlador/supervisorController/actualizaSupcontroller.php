@@ -1,5 +1,5 @@
 <div class="box" id="contenido">
-            <center>
+            <center><br>
             <h3><strong>TABLA ACTUALIZAR DATOS</strong></h3>
             <em>(Podras actualizar tus datos)</em></acronym>
 
@@ -70,12 +70,3 @@
                     </form>
             </center>
             <br>
-            <br>
-            <div class="row-f luid">
-                <div class="span8">
-                </div>
-            </div>
-            <br />
-    </center>
-    </div>
-    </center>

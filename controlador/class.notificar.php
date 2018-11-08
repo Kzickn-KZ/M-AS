@@ -39,10 +39,10 @@ class Novedades{
 					VALUES ('$this->id_tipoNovedad','$this->documento','$this->fecha','$this->descripcion','$this->id_usuario','$this->id_estado')";
 					$this->db->query($sql);
 					if($this->db->errno){
-                	die('<script language="javascript">alert("NO SE PUDO REGISTRAR LA NOVEDAD, INTENTE DE NUEVO");location.href="../vista/aprendiz/novedad.php" </script>');
+                	die('<script language="javascript">alert("NO SE PUDO REGISTRAR LA NOVEDAD, INTENTE DE NUEVO");location.href="../views/aprendiz/novedad.php" </script>');
                	 	}else{
             		echo '<script language="javascript">alert("SE REGISTRO LA NOVEDAD, MUCHAS GRACIAS");';
-            		echo 'location.href ="../vista/aprendiz/vernovedad.php"</script>';
+            		echo 'location.href ="../views/aprendiz/vernovedad.php"</script>';
 					}
 	}//FIN METODO insertarnovedad//
 
@@ -77,10 +77,10 @@ class Novedades{
 			if($estado==3){
 			$mensaje= "ESTA NOVEDAD HA QUEDADO ACEPTADA";
 			}
-			$sql_i = ("UPDATE novedades SET id_estado='$estado' WHERE documento=$codigo");
+			$sql_i = ("UPDATE novedades SET id_estado='$estado' WHERE id_novedades=$codigo");
 			$datos=$db->query($sql_i);
 			echo '<script language="javascript">alert("'.$mensaje.'")</script>';
-			echo '<script>location.href="../vista/supervisor/novedadessup.php"</script>';
+			echo '<script>location.href="../views/supervisor/novedadessup.php"</script>';
 	}//FIN METODO CAMBIESTADO//
 
 

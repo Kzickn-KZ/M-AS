@@ -1,9 +1,9 @@
-<div class="box" id="contenido">
-            <center>
+            <center><br>
                 <!----------------AQUI VA TEXTO DE INICIO CON CALENDARIO-------------->
                 <h3><strong>NOTIFICACIONES</strong></h3>
                 <em>(Aca usted podra llenar este formulario por si se le presenta alguna novedad dependiendo el tipo de
-                    novedad que escoja)<br></em>
+                    novedad que escoja)
+                </em>
                 <form action="../../controlador/ejecutanovedad.php" method="POST"><br>
                     <b>Seleccione el tipo de novedad</b>
                     <select name="id_tipoNovedad" id="id_tipoNovedad" style="width:45%; height:8%" class="form-control"
@@ -43,14 +43,3 @@
                         por favor diligenciar bien los datos)</em>
                 </form>
                 <!---FIN TEXTO--->
-            </center>
-            <br>
-            <br>
-            <div class="row-f luid">
-                <div class="span8">
-                </div>
-            </div>
-            <br />
-    </center>
-    </div>
-    </center>

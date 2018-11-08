@@ -37,10 +37,10 @@ public function insertarcitacion(){
 			VALUES ('$this->id_usuario','$this->citador',  '$this->fecha', '$this->hora', '$this->id_sede', '$this->ambiente')";
 			$this->db->query($sql);
 			if($this->db->errno){
-			die('<script language="javascript">alert("ERROR NO SE A PODIDO ALMECENAR LA CITACION")location.href="../vista/directivo/citacion.php;" </script>');
+			die('<script language="javascript">alert("ERROR NO SE A PODIDO ALMECENAR LA CITACION")location.href="../views/directivo/citacion.php;" </script>');
 			}else{
 			echo '<script language="javascript">alert("SE HA CITADO A EL APRENDIZ CORRECTAMENTE");';
-			echo 'location.href ="../vista/directivo/consultar_aprendiz.php"</script>';
+			echo 'location.href ="../views/directivo/consultar_aprendiz.php"</script>';
 		}
 }//FIN FUNCION DE INSERTAR//
 
@@ -67,10 +67,10 @@ static function eliminar($codigo){
 			$sql = "DELETE FROM citacion WHERE id_citacion=$codigo";
 			$db->query($sql);
 			if ($db->errno) {
-			die('<script language="javascript">alert("NO SE PUDO ELIMINAR");location.href="../vista/directivo/tablacitaciones.php"</script>');
+			die('<script language="javascript">alert("NO SE PUDO ELIMINAR");location.href="../views/directivo/tablacitaciones.php"</script>');
 			}else{
 			echo '<script language="javascript">alert("SE HA ELIMINADO CORRECTAMENTE");</script>';
-			echo '<script>location.href="../vista/directivo/tablacitaciones.php"</script>';
+			echo '<script>location.href="../views/directivo/tablacitaciones.php"</script>';
 		}
 }
 }//FIN CLASE CITACION//

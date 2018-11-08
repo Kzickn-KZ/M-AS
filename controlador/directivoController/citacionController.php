@@ -1,5 +1,5 @@
 <div class="box" id="contenido">
-            <center>
+            <center><br>
                 <h3><strong>FORMULARIO PARA CITAR APRENDICES</strong></h3>
                 <em>(llenar el formulario con las especificaiones para la citacion)</em></acronym><br>
                 <form method="POST" action="../../controlador/agregarcitacion.php"><br>
@@ -23,20 +23,11 @@
         echo "<option value=\"".$reg['id_sede']."\">".$reg['nombre']."</option>";
         }
         ?>
-                    </select>
-                    <br>
-                    Digite Un Ambiente: <br>
+        </select>
+        <br>
+        Digite Un Ambiente: <br>
                     <input type="text" name="ambiente" placeholder="ejem: 205" id="ambiente" style="width:400px; height:40px" class="form-control"><br><br>
                     <button class="btn btn-lg btn-primary btn-block btn-sm" type="submit" class="botonlg" style="width:180px">Enviar</button><br>
                 </form>
             </center>
             <br>
-            <br>
-            <div class="row-f luid">
-                <div class="span8">
-                </div>
-            </div>
-            <br />
-    </center>
-    </div>
-    </center>

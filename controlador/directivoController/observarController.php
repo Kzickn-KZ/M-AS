@@ -1,8 +1,8 @@
-<div class="box" id="contenido">
-            <center>
 
-                <h3><strong>TABLA PARA ACEPTAR APRENDICES</strong></h3>
-                <em>(En esta tabla podra ver los aprendices que solicitaron entrar a alguno de los programas, al hacer
+            <center><br>
+
+    <h3><strong>TABLA PARA ACEPTAR APRENDICES</strong></h3>
+    <em>(En esta tabla podra ver los aprendices que solicitaron entrar a alguno de los programas, al hacer
                     click en la lupa podra ver toda la informacion y aceptarlos)</em></acronym><br><br>
 
                 <?php
@@ -39,7 +39,7 @@ echo $reg['apellido'];
 echo '<br>';
 echo '<br>';
 echo '<strong>';
-echo 'Telefono: ';
+echo 'Correo: ';
 echo '</strong>';
 echo $reg['correo'];
 echo '<br>';
@@ -74,21 +74,7 @@ echo '</strong>';
 echo $reg['programa'];
 echo '<br>';
 echo '<br>';
-echo "<td><a href='../../controlador/prueba.php?codigo=$_GET[codigo]&codigohabilitar=2'><img src='../../img/aceptar.png' class='img-rounded'/></a></td>";
+echo "<td><a href='../../controlador/prueba.php?codigo=$_GET[codigo]&codigohabilitar=2'><button type='button' class='btn btn-primary'>Aceptar</button></a></td>";
 }
 ?>
-            </center>
-            <br>
-            <br>
-            <div class="row-f luid">
-                <div class="span8">
-                </div>
-            </div>
-            <br />
-    </center>
-    </div>
-
-
-
-
-    </center>
+<br><br>

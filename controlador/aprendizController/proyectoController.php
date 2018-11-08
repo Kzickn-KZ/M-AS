@@ -1,5 +1,5 @@
-<div class="box" id="contenido">
-            <center>
+
+            <center><br>
                 <!----------------AQUI VA TEXTO DE INICIO CON CALENDARIO-------------->
                 <h3><strong>PROYECTO</strong></h3>
                 <em>(Llenar datos de proyecto a realizar)</em></acronym><br><br>
@@ -16,12 +16,11 @@ while($row=mysqli_fetch_assoc($nomproyecto)){
 ?>
 <?php
 //CONSULTA DE SABER SI YA LO TIENE REGISTRADO
-$chek = Proyecto::printrow("WHERE documento='$_SESSION[documento]' and id_estado=1 ");
+$chek = Proyecto::printrow("WHERE documento='$_SESSION[documento]' and id_estado=1");
 		if ($chek->num_rows >= 1) {
             echo "<br>";
             echo "<br>";
-            echo "<p><h3>USTED YA TIENE UN PROYECTO LLAMADO: ".$nom." <br>CON UN ESTADO DE: ".$est." <br>SI EL ADMINISTRADOR SE LO CANCELA TENDRA QUE INSERTAR OTRO,<br> SI ESTA EN ACTIVO
-            ES POR QUE USTED ESTA EN DESARROLLO DE:  ".$nom."<BR><BR>GRACIAS.</h3></p>";
+            echo "<p><h3>USTED YA TIENE UN PROYECTO LLAMADO: <br> <p>".$nom."</p>EN ESTADO DE ACTIVO, SI NO APARECE ESTE ANUNCIO LA PROXIMA VEZ ES POR QUE EL SUPERVISOR SE LO HA DESACTIVADO Y TENDRA QUE INSERTAR OTRO<br> <BR><BR>GRACIAS.</h3></p>";
 		}else{
             echo '
             <form method="post" action="../../controlador/ejecutaproyecto.php">
@@ -32,13 +31,13 @@ $chek = Proyecto::printrow("WHERE documento='$_SESSION[documento]' and id_estado
                     <input type="date" name="fechafinal" id="fechafinal" style="width:45%; height:8%" class="form-control"
                         required><br>
                     Nombre del proyecto:
-                    <input type="text" name="nombre" id="nombre" style="width:45%; height:8%" class="form-control"
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre Proyecto" style="width:45%; height:8%" class="form-control"
                         required><br>
                     Descripcion:
-                    <input type="text" name="descripcion" id="descripcion" style="width:45%; height:8%" maxlength="50" class="form-control" required><br>
+                    <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion" style="width:45%; height:8%" maxlength="50" class="form-control" required><br>
                     Supervisor a cargo:
                     <select name="supervisor" id="supervisor" style="width:45%; height:8%" class="form-control"
-                        required>
+                        required><option>Seleccione...</option>
                         ';
                 //CONEXION BASE DE DATOS//
         require_once "../../controlador/class.usuario.php";
@@ -55,14 +54,3 @@ $chek = Proyecto::printrow("WHERE documento='$_SESSION[documento]' and id_estado
         }
 ?>
                 <!---FIN TEXTO--->
-            </center>
-            <br>
-            <br>
-            <div class="row-f luid">
-                <div class="span8">
-                </div>
-            </div>
-            <br />
-    </center>
-    </div>
-    </center>

@@ -1,0 +1,204 @@
+[
+    {
+        "name": "components/jquery",
+        "version": "3.3.1",
+        "version_normalized": "3.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/components/jquery.git",
+            "reference": "459648cda77875519c5da3ae1dd0ed5d170aa649"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/components/jquery/zipball/459648cda77875519c5da3ae1dd0ed5d170aa649",
+            "reference": "459648cda77875519c5da3ae1dd0ed5d170aa649",
+            "shasum": ""
+        },
+        "time": "2018-03-04T13:23:48+00:00",
+        "type": "component",
+        "extra": {
+            "component": {
+                "scripts": [
+                    "jquery.js"
+                ],
+                "files": [
+                    "jquery.min.js",
+                    "jquery.min.map",
+                    "jquery.slim.js",
+                    "jquery.slim.min.js",
+                    "jquery.slim.min.map"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "JS Foundation and other contributors"
+            }
+        ],
+        "description": "jQuery JavaScript Library",
+        "homepage": "http://jquery.com"
+    },
+    {
+        "name": "contao-components/installer",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/contao-components/installer.git",
+            "reference": "15c6855b34b5142955096dda6118676e38ca82ab"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/contao-components/installer/zipball/15c6855b34b5142955096dda6118676e38ca82ab",
+            "reference": "15c6855b34b5142955096dda6118676e38ca82ab",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0",
+            "php": "^5.6 || ^7.0"
+        },
+        "require-dev": {
+            "composer/composer": "^1.0",
+            "friendsofphp/php-cs-fixer": "^2.12",
+            "php-coveralls/php-coveralls": "^2.1",
+            "phpunit/phpunit": "^5.7.26"
+        },
+        "time": "2018-07-23T12:19:38+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "Contao\\ComponentsInstaller\\Composer\\Plugin"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Contao\\ComponentsInstaller\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Leo Feyer",
+                "homepage": "https://github.com/leofeyer"
+            }
+        ],
+        "description": "Contao components installer"
+    },
+    {
+        "name": "heimrichhannot/popper.js",
+        "version": "v1.12.6",
+        "version_normalized": "1.12.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/heimrichhannot/popper.js.git",
+            "reference": "d2df487bdb16196e538a8cbfb05d396dbfc3f73f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/heimrichhannot/popper.js/zipball/d2df487bdb16196e538a8cbfb05d396dbfc3f73f",
+            "reference": "d2df487bdb16196e538a8cbfb05d396dbfc3f73f",
+            "shasum": ""
+        },
+        "require": {
+            "contao-components/installer": "^1.0.9"
+        },
+        "time": "2017-10-27T08:36:04+00:00",
+        "type": "contao-component",
+        "extra": {
+            "component": {
+                "scripts": [
+                    "dist/*.js"
+                ],
+                "files": [
+                    "dist/*.js",
+                    "dist/*.map"
+                ],
+                "shim": {
+                    "deps": [
+                        "jquery"
+                    ]
+                }
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "FezVrasta"
+            }
+        ],
+        "description": "A kickass library to manage your poppers",
+        "homepage": "https://popper.js.org",
+        "keywords": [
+            "css",
+            "framework",
+            "front-end",
+            "less",
+            "mobile-first",
+            "responsive",
+            "web"
+        ]
+    },
+    {
+        "name": "twbs/bootstrap",
+        "version": "v4.1.3",
+        "version_normalized": "4.1.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twbs/bootstrap.git",
+            "reference": "3b558734382ce58b51e5fc676453bfd53bba9201"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twbs/bootstrap/zipball/3b558734382ce58b51e5fc676453bfd53bba9201",
+            "reference": "3b558734382ce58b51e5fc676453bfd53bba9201",
+            "shasum": ""
+        },
+        "replace": {
+            "twitter/bootstrap": "self.version"
+        },
+        "time": "2018-07-24T15:54:34+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jacob Thornton",
+                "email": "jacobthornton@gmail.com"
+            },
+            {
+                "name": "Mark Otto",
+                "email": "markdotto@gmail.com"
+            }
+        ],
+        "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+        "homepage": "https://getbootstrap.com/",
+        "keywords": [
+            "JS",
+            "css",
+            "framework",
+            "front-end",
+            "mobile-first",
+            "responsive",
+            "sass",
+            "web"
+        ]
+    }
+]

@@ -1,12 +1,12 @@
 <div class="box" id="contenido">
-            <center>
+            <center><br>
 <!----------------AQUI VA TEXTO DE INICIO CON CALENDARIO-------------->
 <h3><strong>FORMULARIO PARA REGISTRAR HORAS HECHAS EN EL DIA</strong></h3>
         <em>(recuerde llenar el formulario el mismo dia, ya que no tendra podibilidad de llenarlo al dia
             siguiente)</em></acronym><br>
             <form method="POST" action="../../controlador/ejecutahoras.php"><br>
                 <strong>HORAS REALIZADAS:</strong>
-                <select name="hora" id="hora" style="width:45%; height:8%" class="form-control" required>
+                <select name="hora" id="hora" style="width:35%; height:5%" class="form-control" required>
                     <option>Selecione....</option>
                     <option>1</option>
                     <option>2</option>
@@ -18,14 +18,14 @@
                     <option>8</option>
                 </select><br>
                     <strong>DESCRIPCION:</strong>
-                    <input type="text" name="descripcion" id="descripcion" style="width:45%; height:20%" maxlength="50" class="form-control" required><br>
+                    <input type="text" name="descripcion" id="descripcion" style="width:35%; height:5%" class="form-control" required><br>
                     <strong>Seleccione instructor a cargo: </strong>
-                    <select name="supervisor" id="supervisor" style="width:45%; height:8%" class="form-control"
+                    <select name="supervisor" id="supervisor" style="width:35%; height:5%" class="form-control"
                         required>
                         <option>Seleccione...</option>
                         <?php
                 //CONEXION BASE DE DATOS//
-        require_once "../../modelo/conexion.php";
+        require_once "../../modelo/Conexion.php";
         require_once '../../controlador/class.usuario.php';
         $mysqli = new Conexion();
         $sql = Usuario::imprimirusuario("WHERE rol.id_rol=2");
@@ -49,5 +49,4 @@
             </div>
             <br />
     </center>
-    </div>
     </center>

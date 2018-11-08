@@ -1,26 +1,28 @@
-<div class="box" id="contenido">
-            <center>
+
+            <center><br>
                 <!----------------AQUI VA TEXTO DE INICIO CON CALENDARIO-------------->
                 <h3><strong>NOVEDADES REALIZADAS</strong></h3>
                 <em>Tabla de novedades realizadas, aceptadas o rechazadas</em></acronym>
                 <div id="pdfico">
-                <a href=""><img src="../../img/pdf.png" style="Width:20%;"></a>
-                </div><br><br>
+                <a href="../../assets/pdf/creaPDF2.php"><img src="../../assets/img/pdf.png" style="Width:15%;"></a>
+                <a href="../../assets/PHPExcel/reporte4.php"><img src="../../assets/img/ex.png" style="Width:15%;"></a>
+                    </div>
                 <?php
                 include_once '../../modelo/conexion.php';
                 include_once '../../controlador/class.notificar.php';
     $consulta=Novedades::imprimirnovedad("WHERE novedades.documento='$_SESSION[documento]'");
-    echo '<div class="datagrid" style="width:100%">';
-                echo '<table  id="horas" >';
-                echo'<thead>';
-                echo '<tr>
-            <th class="center">TIPO NOVEDAD</th>
-            <th class="center">DOCUMENTO</th>
-            <th class="center">FECHA</th>
-            <th class="center">DESCRIPCION</th>
-            <th class="center">SUPERVISOR</th>
-            <th class="center">ESTADO</th>
-            ';
+    echo '<div class="table-responsive">';
+    echo '<table class="table">';
+    echo  '<thead class="bg-danger">';
+    echo '<tr>';
+    echo '<th scope="col">Tipo Novedad</th>';
+    echo '<th scope="col">Documento</th>';
+    echo '<th scope="col">Fecha</th>';
+    echo '<th scope="col">Descripcion</th>';
+    echo '<th scope="col">Supervisor a cargo</th>';
+    echo '<th scope="col">Estado</th>';
+    echo '</tr>';
+    echo '</thead>';
     while($reg=$consulta->fetch_array())
     {
                     echo ' <tbody>';
@@ -50,14 +52,3 @@
                     echo '</div>';
                     ?>
                 <!---FIN TEXTO--->
-            </center>
-            <br>
-            <br>
-            <div class="row-f luid">
-                <div class="span8">
-                </div>
-            </div>
-            <br />
-    </center>
-    </div>
-    </center>

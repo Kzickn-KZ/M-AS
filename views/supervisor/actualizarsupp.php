@@ -1,0 +1,18 @@
+<!----SEGURIDAD----->
+<?php
+include_once'seguridadsupervisor.php';
+?>
+<?php
+include_once'../all/head.php';
+include_once'../all/header.php';
+?>
+<!-------CABECERA------>
+<?php
+include_once'../all/narvarsup.php';
+?>
+<?php
+include_once'../../controlador/supervisorController/actualizaSupcontroller.php';
+?>
+    <?php
+include_once'../all/footer.php';
+?>

@@ -1,19 +1,23 @@
-<div class="box" id="contenido">
-            <!----------------AQUI VA TEXTO DE INICIO CON CALENDARIO-------------->
-            <h3><strong>Horas realizadas</strong></h3>
+<center><br>
+            <h3><strong>HORAS REALIZADAS</strong></h3>
             <em>(Aca podra visualizar las hora que lleva y las que le faltan por hacer)</em>
             <div id="pdfico">
-                <a href=""><img src="../../img/pdf.png" style="Width:20%;"></a>
-                </div><br><br>
+                <a href="../../assets/pdf/creaPDF1.php"><img src="../../assets/img/pdf.png" style="Width:15%;"></a>
+                <a href="../../assets/PHPExcel/reporte3.php"><img src="../../assets/img/ex.png" style="Width:15%;"></a>
+                    </div>
                 <?php
                 include_once '../../controlador/class.horas.php';
                 include_once'../../modelo/Conexion.php';
                 $sql = Horas::sumadehoras("WHERE documento='$_SESSION[documento]' and id_estado=3 and tok=0");
 				$fila=$sql->fetch_assoc();
                 $horitas=$fila['horitas'];
-				$horastotales= 40;
+                if($_SESSION['id_tipoUsuario']==1){
+                    $horastotales = 60;
+                }else{
+                    $horastotales= 40;
+                }
                 $total = $horitas-$horastotales;
-                if ($horitas>=$horastotales) {
+                if ($horitas>=$horastotales){
                 echo "<b>EL APRENDIZ YA COMPLETO SUS HORAS</b>";
                 }else{
                 echo "<b>TE FALTAN: " .$total. " HORAS POR COMPLETAR</b>";
@@ -23,31 +27,32 @@
                 ?>
                 <?php
                 $registros=Horas::imprimirHoras("WHERE horas.documento='$_SESSION[documento]' and tok=0 ORDER BY horas.fecha ASC");
-                echo '<div class="datagrid" style="width: 100%;">';
-                echo '<table  id="horas">';
-                echo'<thead>';
-                echo '<tr>
-            <th class="center">DOCUMENTO</th>
-            <th class="center">FECHA</th>
-            <th class="center">HORAS REALIZADAS</th>
-            <th class="center">DESCRIPCION</th>
-            <th class="center">SUPERVISOR</th>
-            <th class="center">ESTADO</th>
-            ';
+            echo '<div class="table-responsive">';
+            echo '<table class="table">';
+            echo  '<thead class="bg-danger">';
+            echo '<tr>';
+            echo '<th scope="col">Documento</th>';
+            echo '<th scope="col">Fecha</th>';
+            echo '<th scope="col">Horas Realizadas</th>';
+            echo '<th scope="col">Descripcion</th>';
+            echo '<th scope="col">Supervisor a cargo</th>';
+            echo '<th scope="col">Estado</th>';
+            echo '</tr>';
+            echo '</thead>';
         while ($reg=$registros->fetch_array())
         {
         echo ' <tbody>';
-        echo '<tr class="">';
+        echo '<tr>';
         echo '<td>';
         echo $reg['documento'];
         echo '</td>';
-        echo '<td style="width:50%;">';
+        echo '<td>';
         echo $reg['fecha'];
         echo '</td>';
         echo '<td>';
         echo $reg['horas_realizadas'];
         echo '</td>';
-        echo '<td style="width:50%;">';
+        echo '<td>';
         echo $reg['descripcion'];
         echo '</td>';
         echo '<td>';
@@ -64,14 +69,4 @@
         ?>
             <br>
             <!---FIN TEXTO--->
-    </center>
-    <br>
-    <br>
-    <div class="row-f luid">
-        <div class="span8">
-        </div>
-    </div>
-    <br />
-    </center>
-    </div>
     </center>

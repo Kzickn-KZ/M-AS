@@ -1,5 +1,4 @@
-<div class="box" id="contenido">
-            <center>
+            <center><br>
                 <h3><strong>AGREGAR SUPERVISORES</strong></h3>
                 <em>(Agregar supervisores)</em></acronym><br><br>
                 <form method="POST" action="../../controlador/insertarsupervisor.php">
@@ -61,20 +60,5 @@ echo "<option value=\"".$reg['id_sede']."\">".$reg['nombre']."</option>";
 
                     <input type="submit" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm" style="width:20%">
 
-                </form>
+                </form><br>
 
-            </center>
-            <br>
-            <br>
-            <div class="row-f luid">
-                <div class="span8">
-                </div>
-            </div>
-            <br />
-    </center>
-    </div>
-
-
-
-
-    </center>

@@ -42,10 +42,10 @@ class Horas{
         		'$this->descripcion','$this->id_usuario','$this->id_estado','$this->tok');";
 				$this->db->query($sql);
 				if($this->db->errno){
-                die('<script language="javascript">alert("NO SE PUDO REGISTRAR LAS HORAS");location.href="../vista/aprendiz/iniciousu.php" </script>');
+                die('<script language="javascript">alert("NO SE PUDO REGISTRAR LAS HORAS");location.href="../views/aprendiz/iniciousu.php" </script>');
                 }else{
             	echo '<script language="javascript">alert("SE REGISTRARON LAS HORAS CORRECTAMENTE");';
-            	echo 'location.href ="../vista/aprendiz/horasregistradas.php"</script>';
+            	echo 'location.href ="../views/aprendiz/horasregistradas.php"</script>';
 					}
 	}//fin metodo insertarhoras//
 
@@ -82,7 +82,7 @@ static function cambiarEstado($estado, $codigo){
         $sqlborrar=("UPDATE horas set id_estado='$estado' where id_horas=$codigo");
         $datos=$db->query($sqlborrar);
         echo ' <script language="javascript">alert("'.$mensaje.'");</script> ';
-    	echo "<script>location.href='../vista/supervisor/inicio_supervisor.php'</script>";
+    	echo "<script>location.href='../views/supervisor/inicio_supervisor.php'</script>";
 }//FIn metodo cambiarEstado//
 
 
@@ -101,7 +101,6 @@ static function sumadehoras($WHERE){
 
 
 
-
 static function cambiartok($tok, $codigo){
 			$db = new Conexion();
 			$mensaje="TOK ACEPTADO";
@@ -111,8 +110,22 @@ static function cambiartok($tok, $codigo){
 		$sqlborrar=("UPDATE horas set tok='$tok' where documento=$codigo");
 		$datos=$db->query($sqlborrar);
 		echo ' <script language="javascript">alert("'.$mensaje.'");</script> ';
-		echo "<script>location.href='../vista/directivo/horasadmin.php'</script>";
+		echo "<script>location.href='../views/directivo/horasadmin.php'</script>";
 }
+
+
+static function reiniciohoras($reinicio){
+$mensaje= "NO SE REINICIARON LAS HORAS";
+if($reinicio=1){
+	$mensaje = "SE REINICIARON LAS HORAS";
+}
+	$db = new Conexion();
+	$sql_li = "UPDATE horas SET tok='$reinicio'";
+	$date = $db->query($sql_li);
+	echo '<script language="javascript">alert("'.$mensaje.'")</script>';
+	echo '<script>location.href="../views/directivo/horasadmin.php"</script>';
+}
+
 
 } //fin class horas//
 ?>

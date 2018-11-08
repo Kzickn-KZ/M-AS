@@ -1,0 +1,20 @@
+body{
+  background-color:#e5e7e9;
+}
+#pdfico {
+  width: 30%;
+  right: 30%;
+  position: relative;
+  left: 43%;
+  top: -50px;
+}
+
+#reinicio {
+  width: 30%;
+  right: 30%;
+  position: relative;
+  left: 43%;
+  height: 20%;
+  top: -50px;
+}
+

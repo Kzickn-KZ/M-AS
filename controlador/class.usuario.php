@@ -56,7 +56,7 @@ class Usuario{
 				$db = new Conexion();
 				$valido = $this->validardoc($this->documento);
 				if ($valido) {
-				echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../vista/registro_aprendiz.php"</script>';
+				echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../views/registro_aprendiz.php"</script>';
 				} else {
 				$sql_insertarusuario = "INSERT INTO usuario
 				(documento,id_tipoDocumento,nombre,apellido,correo,telefono,contrasena,passadmin,passsuper,id_sede,id_programa,id_ficha,id_tipoUsuario,
@@ -64,10 +64,10 @@ class Usuario{
 				VALUES ('$this->documento','$this->id_tipoDocumento','$this->nombre','$this->apellido','$this->correo','$this->telefono','$this->contrasena','$this->passadmin','$this->passsuper','$this->id_sede','$this->id_programa','$this->id_ficha','$this->id_tipoUsuario','$this->id_rol','$this->id_estado')";
 				$this->db->query($sql_insertarusuario);
 				if($this->db->errno){
-				die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR")location.href="../vista/registro_aprendiz.php;" </script>');
+				die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR")location.href="../views/registro_aprendiz.php;" </script>');
 				}else{
 				echo '<script language="javascript">alert("SE HA REGISTRADO CORRECTAMENTE, ENTRASTE A UN PROCESO DE SELECCION, EN UNOS DIAS TE CONFIRMARAN Y PODRAS ACCEDER A EL SISTEMA");';
-				echo 'location.href ="../index.html"</script>';
+				echo 'location.href ="../index.php"</script>';
 			}
 		}
 }
@@ -81,7 +81,7 @@ public function insertarsupervisor(){
 			$db = new Conexion();
 			$valido = $this->validardoc($this->documento);
 			if ($valido) {
-			echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../vista/directivo/agregarsupp.php"</script>';
+			echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../views/directivo/agregarsupp.php"</script>';
 			} else {
 			$sql_insertarsup = "INSERT INTO usuario
 			(documento,id_tipoDocumento,nombre,apellido,correo,telefono,contrasena,passadmin,passsuper,id_sede,id_programa,id_ficha,id_tipoUsuario,
@@ -89,10 +89,10 @@ public function insertarsupervisor(){
 			VALUES ('$this->documento','$this->id_tipoDocumento','$this->nombre','$this->apellido','$this->correo','$this->telefono','$this->contrasena','$this->passadmin','$this->passsuper','$this->id_sede','$this->id_programa','$this->id_ficha','$this->id_tipoUsuario','$this->id_rol','$this->id_estado')";
 			$this->db->query($sql_insertarsup);
 			if($this->db->errno){
-			die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR EL SUPERVISOR")location.href="../vista/directivo/agregarsup.php;" </script>');
+			die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR EL SUPERVISOR")location.href="../views/directivo/agregarsup.php;" </script>');
 			}else{
 			echo '<script language="javascript">alert("SE HA REGISTRADO CORRECTAMENTE UN NUEVO SUPERVISOR");';
-			echo 'location.href ="../vista/directivo/agregarsup.php"</script>';
+			echo 'location.href ="../views/directivo/agregarsup.php"</script>';
 			}
 			}
 }
@@ -135,7 +135,7 @@ static function cambiarEstados($estado, $codigo){
     $sql="UPDATE usuario SET id_estado='$estado' WHERE id_usuario=$codigo";
     $db->query($sql);
 	echo ' <script language="javascript">alert("'.$mensaje.'");</script> ';
-	echo "<script>location.href='../vista/directivo/Aprendicess.php'</script>";
+	echo "<script>location.href='../views/directivo/Aprendicess.php'</script>";
 }
 
 
@@ -159,6 +159,8 @@ static  function validardoc($documento){
 
 //METODO ACTUALIZACION DE EL ROL USUARIO//
 public  function updateuser($id_usuario){
+
+										$db = new Conexion();
 										$db = new Conexion();
 										$sql_upuser = "UPDATE usuario SET documento='$this->documento',
 										id_tipoDocumento='$this->id_tipoDocumento',
@@ -178,14 +180,27 @@ public  function updateuser($id_usuario){
 										WHERE id_usuario='$id_usuario'";
 				$this->db->query($sql_upuser);
 				if($this->db->errno){
-		    	die('<script language="javascript">alert("No se an podido actualizar los datos");location.href="../vista/aprendiz/updateuser.php"</script>');
+		    	die('<script language="javascript">alert("No se an podido actualizar los datos");location.href="../views/aprendiz/updateuser.php"</script>');
 				}else{
 				echo '<script language="javascript">alert("SE HA ACTUALIZADO CORRECTAMENTE");</script>';
-				echo '<script>location.href="../index.html"</script>';
+				echo '<script>location.href="../index.php"</script>';
 		}
-	}
+}
+//FIN METODO UPDATEUSER//
 
-	//FIN METODO UPDATEUSER//
+static function tipouser($WHERE){
+$db = new Conexion();
+$sql_up = "SELECT documento, id_tipoUsuario FROM usuario $WHERE";
+$dat = $db->query($sql_up);
+return $dat;
+
+}
+
+
+
+
+
+
 
 
 

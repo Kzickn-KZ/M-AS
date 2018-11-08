@@ -1,0 +1,19 @@
+<!----SEGURIDAD----->
+<?php
+include_once'seguridaddirectivo.php';
+?>
+<?php
+include_once'../all/head.php';
+include_once'../all/header.php';
+?>
+<!-------CABECERA------>
+<?php
+include_once'../all/narvaradmin.php';
+?>
+<?php
+include_once'../../controlador/directivoController/citacionController.php';
+?>
+    <!--------------FIN CONTENEDORES---------------->
+    <?php
+include_once'../all/footer.php';
+?>
