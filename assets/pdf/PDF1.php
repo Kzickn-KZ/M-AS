@@ -26,11 +26,11 @@ class PDF extends FPDF
 
     function cabeceraVertical($cabecera)
     {
-        $this->SetXY(90, 93);
+        $this->SetXY(15, 93);
         $this->SetFont('Arial','B',10);
         $this->SetFillColor(255, 0, 0);//Fondo verde de celda
         $this->SetTextColor(240, 255, 240); //Letra color blanco
-        $ejeX = 90;
+        $ejeX = 15;
         foreach($cabecera as $fila)
         {
             $this->RoundedRect($ejeX, 93, 40, 7, 2, 'FD');
@@ -41,29 +41,44 @@ class PDF extends FPDF
 
     function datosVertical($datos)
     {
-       $this->SetXY(90, 100);
+        $this->SetXY(90, 100);
         $this->SetFont('Arial','',10);
         $this->SetFillColor(229, 229, 229); //Gris tenue de cada fila
         $this->SetTextColor(3, 3, 3); //Color del texto: Negro
         $bandera = false; //Para alternar el relleno
         $ejeY = 100; //Aquí se encuentra la primer CellFitSpace e irá incrementando
         $letra = 'D'; //'D' Dibuja borde de cada CellFitSpace -- 'FD' Dibuja borde y rellena
+        $this->Ln(1);
+        
+   
         foreach($datos as $fila)
         {
+            $this->Cell(5,7,'','',NULL,NULL,NULL,NULL);
             //Por cada 3 CellFitSpace se crea un RoundedRect encimado
             //El parámetro $letra de RoundedRect cambiará en cada iteración
             //para colocar FD y D, la primera iteración es D
             //Solo la celda de enmedio llevará bordes, izquierda y derecha
             //Las celdas laterales colocarlas sin borde
-            $this->RoundedRect(90, $ejeY, 240, 7, 0, $letra);
+            //$this->RoundedRect(90, $ejeY, 240, 7, 0, $letra);
             //$this->CellFitSpace(40,7, utf8_decode($fila['id_user']),0, 0 , 'L' );
+            $this->Cell(40,7,$fila['documento'],'1',NULL,NULL,NULL,NULL);
+            $this->Cell(40,7,$fila['fecha'],'1',NULL,NULL,NULL,NULL);
+            $this->Cell(40,7,$fila['horas_realizadas'],'1',NULL,NULL,NULL,NULL);
+            $this->Cell(40,7,$fila['nombresupervisor'],'1',NULL,NULL,NULL,NULL);
+            $this->Cell(40,7,$fila['nombreestado'],'1',NULL,NULL,NULL,NULL);
+            $this->Cell(195,7,$fila['descripcion'],'1',NULL,NULL,NULL,NULL);
+
+
+            $this->Ln(7);
+            /*
             $this->CellFitSpace(40,7, utf8_decode($fila['documento']),'LR', 0 , 'C' );
             $this->CellFitSpace(40,7, utf8_decode($fila['fecha']),'LR', 0 , 'C' );
             $this->CellFitSpace(40,7, utf8_decode($fila['horas_realizadas']),'LR', 0 , 'C' );
             $this->CellFitSpace(40,7, utf8_decode($fila['descripcion']),'LR', 0 , 'C' );
             $this->CellFitSpace(40,7, utf8_decode($fila['nombresupervisor']),'LR', 0 , 'C' );
             $this->CellFitSpace(40,7, utf8_decode($fila['nombreestado']),'LR', 0 , 'C' );
-            $this->Ln();
+            $this->Ln(7);
+            */
             //Condición ternaria que cambia el valor de $letra
             ($letra == 'D') ? $letra = 'FD' : $letra = 'D';
             //Aumenta la siguiente posición de Y (recordar que X es fijo)

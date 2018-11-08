@@ -34,7 +34,7 @@ $chek = Proyecto::printrow("WHERE documento='$_SESSION[documento]' and id_estado
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre Proyecto" style="width:45%; height:8%" class="form-control"
                         required><br>
                     Descripcion:
-                    <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion" style="width:45%; height:8%" maxlength="50" class="form-control" required><br>
+                    <textarea type="text" name="descripcion" id="descripcion" placeholder="Descripcion" style="width:45%; height:8%" class="form-control" required></textarea><br>
                     Supervisor a cargo:
                     <select name="supervisor" id="supervisor" style="width:45%; height:8%" class="form-control"
                         required><option>Seleccione...</option>

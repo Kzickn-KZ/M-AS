@@ -22,7 +22,7 @@
                 ?>
                     </select><br>
                     <b>Descripcion clara de la novedad</b>
-                    <input type="text" name="descripcion" id="descripcion" style="width:45%; height:20%" maxlength="65" class="form-control" required><br>
+                    <textarea type="text" name="descripcion" id="descripcion" style="width:45%; height:20%" class="form-control" required></textarea><br>
                     <b>Supervisor:</b>
                     <select name="supervisor" id="supervisor" style="width:45%; height:8%" class="form-control"
                         required>

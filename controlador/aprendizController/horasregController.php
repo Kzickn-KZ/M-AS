@@ -20,7 +20,7 @@
                 if ($horitas>=$horastotales){
                 echo "<b>EL APRENDIZ YA COMPLETO SUS HORAS</b>";
                 }else{
-                echo "<b>TE FALTAN: " .$total. " HORAS POR COMPLETAR</b>";
+                echo "<b>TE FALTAN: " .-$total. " HORAS POR COMPLETAR</b>";
 				}
                 echo "<br>";
                 echo "<br>";

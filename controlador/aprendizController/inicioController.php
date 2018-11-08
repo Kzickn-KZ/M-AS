@@ -18,7 +18,7 @@
                     <option>8</option>
                 </select><br>
                     <strong>DESCRIPCION:</strong>
-                    <input type="text" name="descripcion" id="descripcion" style="width:35%; height:5%" class="form-control" required><br>
+                    <textarea type="text" name="descripcion" id="descripcion" style="width:35%; height:5%" class="form-control" required></textarea><br>
                     <strong>Seleccione instructor a cargo: </strong>
                     <select name="supervisor" id="supervisor" style="width:35%; height:5%" class="form-control"
                         required>

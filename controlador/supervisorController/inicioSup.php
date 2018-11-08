@@ -1,15 +1,21 @@
-<div class="box" id="contenido">
             <center><br>
                 <h3><strong>TABLA DONDE PODRA VER LOS APRENDICES</strong></h3>
                 <em>(En esta tabla podra ver los aprendices a cargo)</em></acronym><br><br>
                 <form name="form1" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="cdr" >
-                    <p><input name="T1"  type="text" style="width:30%; height:5%" class="form-control" size="20"></p>
+                    <p><input name="T1"  type="text" style="width:30%; height:5%" class="form-control" size="20" placeholder="BUSCAR"></p>
                     <input  name="buscar" type="submit" id="buscar" value="buscar" class="btn btn-lg btn-primary btn-block btn-sm" style="width: 100px"/>
                 </form><br>
+
                 <?php
+
+                ini_set('display_errors','off');
+                ini_set('display_startup_errors','off');
+                error_reporting(0);
+
+                $buscar = $_POST['T1'];
         require("../../modelo/conexion.php");
         include '../../controlador/class.horas.php';
-        $query=Horas::imprimirHoras(" WHERE usuario.id_usuario=$_SESSION[id_usuario] GROUP BY documento");
+        $query=Horas::imprimirHoras("WHERE horas.documento LIKE '%".$buscar."%' and usuario.id_usuario='$_SESSION[id_usuario]' GROUP BY documento");
         echo '<div class="table-responsive">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';
