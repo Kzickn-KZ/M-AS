@@ -7,7 +7,7 @@
     include_once'../../modelo/Conexion.php';
         include_once'../../controlador/class.notificar.php';
         $sql = Novedades::imprimirnovedad("WHERE novedades.id_usuario='$_SESSION[id_usuario]'");
-        echo '<div class="table-responsive">';
+        echo '<div class="table-responsive table-hover">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';
         echo '<tr>';

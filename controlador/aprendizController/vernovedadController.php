@@ -11,7 +11,7 @@
                 include_once '../../modelo/conexion.php';
                 include_once '../../controlador/class.notificar.php';
     $consulta=Novedades::imprimirnovedad("WHERE novedades.documento='$_SESSION[documento]'");
-    echo '<div class="table-responsive">';
+    echo '<div class="table-responsive table-hover">';
     echo '<table class="table">';
     echo  '<thead class="bg-danger">';
     echo '<tr>';

@@ -20,7 +20,7 @@
                 include_once'../../controlador/class.usuario.php';
                 $buscar=$_POST['T1'];
                 $sql = Usuario::imprimirusuario("WHERE documento LIKE '%".$buscar."%' and rol.id_rol=1");
-        echo '<div class="table-responsive">';
+        echo '<div class="table-responsive table-hover">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';
         echo '<tr>';

@@ -15,7 +15,7 @@
         require("../../modelo/conexion.php");
         include '../../controlador/class.horas.php';
         $query=Horas::imprimirHoras("WHERE horas.documento LIKE '%".$buscar."%' and horas.tok=0 GROUP BY horas.documento DESC");
-        echo '<div class="table-responsive">';
+        echo '<div class="table-responsive table-hover">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';
         echo '<tr>';

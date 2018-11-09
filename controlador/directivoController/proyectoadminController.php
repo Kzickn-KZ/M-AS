@@ -20,7 +20,7 @@
                     include_once'../../controlador/class.proyecto.php';
                     include_once'../../modelo/Conexion.php';
                     $query = Proyecto::verproyectos("WHERE proyecto.documento LIKE '%".$buscar."%'");
-                    echo '<div class="table-responsive">';
+                    echo '<div class="table-responsive table-hover">';
                     echo '<table class="table">';
                     echo  '<thead class="bg-danger">';
                     echo '<tr>';

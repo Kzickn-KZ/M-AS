@@ -27,7 +27,7 @@
                 ?>
                 <?php
                 $registros=Horas::imprimirHoras("WHERE horas.documento='$_SESSION[documento]' and tok=0 ORDER BY horas.fecha ASC");
-            echo '<div class="table-responsive">';
+            echo '<div class="table-responsive table-hover">';
             echo '<table class="table">';
             echo  '<thead class="bg-danger">';
             echo '<tr>';

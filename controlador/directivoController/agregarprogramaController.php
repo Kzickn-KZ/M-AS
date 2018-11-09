@@ -17,7 +17,7 @@
                 include_once'../../modelo/Conexion.php';
                 include_once'../../controlador/class.programa.php';
                 $sql = Programa::imprimirprograma("WHERE programa.nombre LIke '%".$buscar."%' ");
-                echo '<div class="table-responsive">';
+                echo '<div class="table-responsive table-hover">';
                 echo '<table class="table">';
                 echo  '<thead class="bg-danger">';
                 echo '<tr>';

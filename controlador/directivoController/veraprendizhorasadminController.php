@@ -27,7 +27,7 @@
                     echo "<br>";
                     echo "<br>";
         $query=Horas::imprimirHoras("WHERE horas.documento='$_GET[codigoo]' and tok=0");
-        echo '<div class="table-responsive">';
+        echo '<div class="table-responsive table-hover">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';
         echo '<tr>';

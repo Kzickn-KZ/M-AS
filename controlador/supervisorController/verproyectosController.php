@@ -13,7 +13,7 @@
 
                 $query = Proyecto::verproyectos("WHERE usuario.id_usuario='$_SESSION[id_usuario]'");
 
-            echo '<div class="table-responsive">';
+            echo '<div class="table-responsive table-hover">';
             echo '<table class="table">';
             echo  '<thead class="bg-danger">';
             echo '<tr>';

@@ -15,7 +15,7 @@
                 require("../../modelo/conexion.php");
                 include '../../controlador/class.usuario.php';
                 $query=Usuario::imprimirusuario("WHERE documento LIKE '%".$buscar."%' and usuario.id_estado=1 and rol.id_rol=1");
-        echo '<div class="table-responsive">';
+        echo '<div class="table-responsive table-hover">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';
         echo '<tr>';

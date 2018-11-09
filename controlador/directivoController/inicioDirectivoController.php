@@ -17,7 +17,7 @@
                 include_once '../../controlador/class.usuario.php';
                 include_once '../../modelo/conexion.php';
                 $query = Usuario::imprimirusuario("Where documento LIKE '%".$buscar."%' and rol.id_rol=1 and estado.id_estado=5");
-                echo '<div class="table-responsive">';
+                echo '<div class="table-responsive table-hover">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';
         echo '<tr>';

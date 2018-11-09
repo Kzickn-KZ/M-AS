@@ -15,7 +15,7 @@
                 include_once'../../controlador/class.citacion.php';
 
                 $sql = Citacion::veraprendicescitados("WHERE documento LIKE '%".$buscar."%' ");
-                echo '<div class="table-responsive">';
+                echo '<div class="table-responsive table-hover">';
                 echo '<table class="table">';
                 echo  '<thead class="bg-danger">';
                 echo '<tr>';
