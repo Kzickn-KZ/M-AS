@@ -1,17 +1,20 @@
 <center><br>
                 <h3><strong>TABLA VER HORAS DE APRENDICES</strong></h3>
-                <a href="../../controlador/prueba.php?reinicio=2"><button type='button' class='btn btn-warning' style="width: 15%;
-right: 30%; left: 43%;
-height: 30%;
-top: -80%; position: relative;"><img src="../../assets/img/delete.png" style="width:15%"></button></a>
+                <em>(ver las horas que ha desarrollado el aprendiz y reiniciarlas)</em>
                 <form name="form1" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="cdr" >
                 <p><input name="T1"  type="text" style="width:30%; height:5%" class="form-control" size="20"></p>
                 <input  name="buscar" type="submit" id="buscar" value="buscar" class="btn btn-lg btn-primary btn-block btn-sm" style="width: 100px"/>
-                        </form><br>
+                </form><br>
                 <?php
+                //CODIGO PARA ERROR QUE SALE EN LA CONEXION//PERO AL QUITARLA NO SERVIRIA NADA//
+                ini_set('display_errors','off');
+                ini_set('display_startup_errors','off');
+                error_reporting(0);
+
+                $buscar = $_POST['T1'];
         require("../../modelo/conexion.php");
         include '../../controlador/class.horas.php';
-        $query=Horas::imprimirHoras("WHERE horas.tok=0 GROUP BY horas.documento DESC");
+        $query=Horas::imprimirHoras("WHERE horas.documento LIKE '%".$buscar."%' and horas.tok=0 GROUP BY horas.documento DESC");
         echo '<div class="table-responsive">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';

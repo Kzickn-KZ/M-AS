@@ -56,7 +56,7 @@ class Usuario{
 				$db = new Conexion();
 				$valido = $this->validardoc($this->documento);
 				if ($valido) {
-				echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../views/registro_aprendiz.php"</script>';
+				echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../views/inicio/registro_aprendiz.php"</script>';
 				} else {
 				$sql_insertarusuario = "INSERT INTO usuario
 				(documento,id_tipoDocumento,nombre,apellido,correo,telefono,contrasena,passadmin,passsuper,id_sede,id_programa,id_ficha,id_tipoUsuario,
@@ -196,7 +196,12 @@ return $dat;
 
 }
 
-
+static function validatelogin($WHERE){
+	$db = new Conexion();
+	$sql_val = "SELECT * FROM usuario $WHERE";
+	$dats = $db->query($sql_val);
+	return $dats;
+}
 
 
 

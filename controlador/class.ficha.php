@@ -30,7 +30,7 @@ class ficha{
 			die ('<script language="javascript">alert("NO SE HA PODIDO REGISTRAR LA FICHA");location.href="../views/agregarficha.php"</script>');
 			}else{
 			echo '<script language="javascript">alert("SE HA REGISTRADO LA FICHA CORRECTAMENTE");';
-			echo 'location.href="../views/agregarficha.php"</script>';
+			echo 'location.href="../views/directivo/agregarficha.php"</script>';
 		}
 	}//FIN METODO insertarficha//
 

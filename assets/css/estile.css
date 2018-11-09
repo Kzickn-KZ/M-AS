@@ -17,4 +17,8 @@ body{
   height: 20%;
   top: -50px;
 }
+.none{
+  position: absolute;
+  right: 10%;
+}
 

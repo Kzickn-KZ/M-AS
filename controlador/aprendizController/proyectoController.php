@@ -18,9 +18,7 @@ while($row=mysqli_fetch_assoc($nomproyecto)){
 //CONSULTA DE SABER SI YA LO TIENE REGISTRADO
 $chek = Proyecto::printrow("WHERE documento='$_SESSION[documento]' and id_estado=1");
 		if ($chek->num_rows >= 1) {
-            echo "<br>";
-            echo "<br>";
-            echo "<p><h3>USTED YA TIENE UN PROYECTO LLAMADO: <br> <p>".$nom."</p>EN ESTADO DE ACTIVO, SI NO APARECE ESTE ANUNCIO LA PROXIMA VEZ ES POR QUE EL SUPERVISOR SE LO HA DESACTIVADO Y TENDRA QUE INSERTAR OTRO<br> <BR><BR>GRACIAS.</h3></p>";
+            echo "<p><h3>USTED YA TIENE UN PROYECTO LLAMADO: <br> <p>".$nom."</p>EN ESTADO DE ACTIVO, SI NO APARECE ESTE ANUNCIO LA PROXIMA VEZ ES POR QUE EL SUPERVISOR SE LO HA DESACTIVADO Y TENDRA QUE INSERTAR OTRO<br> <BR>GRACIAS.</h3></p>";
 		}else{
             echo '
             <form method="post" action="../../controlador/ejecutaproyecto.php">

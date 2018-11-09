@@ -11,10 +11,15 @@
                             </form><br>
 
                 <?php
+                //CODIGO PARA ERROR QUE SALE EN LA CONEXION//PERO AL QUITARLA NO SERVIRIA NADA//
+                ini_set('display_errors','off');
+                ini_set('display_startup_errors','off');
+                error_reporting(0);
+                $buscar = $_POST['T1'];
                 include_once'../../modelo/Conexion.php';
                 include_once'../../controlador/class.usuario.php';
                 $buscar=$_POST['T1'];
-                $sql = Usuario::imprimirusuario("WHERE rol.id_rol=1");
+                $sql = Usuario::imprimirusuario("WHERE documento LIKE '%".$buscar."%' and rol.id_rol=1");
         echo '<div class="table-responsive">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';

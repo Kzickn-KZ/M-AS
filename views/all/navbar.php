@@ -15,7 +15,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="proyecto.php">Proyecto</a>
                             <a class="dropdown-item" href="updateuser.php">Actualizar Datos</a>
-                            <a class="dropdown-item" href="citaciones.php">Citacion</a>
+                            <a class="dropdown-item" href="citaciones.php">Citacion <span class="badge badge-primary badge-pill">2</span></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Necesitas Ayuda?</a>
                         </div>

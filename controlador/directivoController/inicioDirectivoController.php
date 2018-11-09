@@ -9,12 +9,14 @@
                 <input  name="buscar" type="submit" id="buscar" value="buscar" class="btn btn-lg btn-primary btn-block btn-sm" style="width: 100px"/>
                         </form><br>
                 <?php
+                //CODIGO PARA ERROR QUE SALE EN LA CONEXION//PERO AL QUITARLA NO SERVIRIA NADA//
                 ini_set('display_errors','off');
                 ini_set('display_startup_errors','off');
                 error_reporting(0);
+                $buscar = $_POST['T1'];
                 include_once '../../controlador/class.usuario.php';
                 include_once '../../modelo/conexion.php';
-                $query = Usuario::imprimirusuario("Where rol.id_rol=1 and estado.id_estado=5");
+                $query = Usuario::imprimirusuario("Where documento LIKE '%".$buscar."%' and rol.id_rol=1 and estado.id_estado=5");
                 echo '<div class="table-responsive">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';

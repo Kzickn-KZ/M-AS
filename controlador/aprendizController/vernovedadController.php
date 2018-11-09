@@ -36,7 +36,7 @@
                     echo '<td>';
                     echo $reg['fecha'];
                     echo '</td>';
-                    echo '<td style="width:50%">';
+                    echo '<td style="width:20%">';
                     echo $reg['descripcion'];
                     echo '</td>';
                     echo '<td>';

@@ -1,6 +1,4 @@
-
             <center><br>
-
                 <h3><strong>TABLA DE CITACIONES</strong></h3>
                 <em>(Podra ver las citaciones realizadas, tendra la opcion de cancelarla)</em></acronym><br>
                 <form name="form1" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="cdr" >
@@ -8,10 +6,15 @@
                     <input  name="buscar" type="submit" id="buscar" value="buscar" class="btn btn-lg btn-primary btn-block btn-sm" style="width: 100px"/>
                             </form><br>
                 <?php
+                //CODIGO PARA ERROR QUE SALE EN LA CONEXION//PERO AL QUITARLA NO SERVIRIA NADA//
+                ini_set('display_errors','off');
+                ini_set('display_startup_errors','off');
+                error_reporting(0);
+                $buscar = $_POST['T1'];
                 include_once'../../modelo/Conexion.php';
                 include_once'../../controlador/class.citacion.php';
 
-                $sql = Citacion::veraprendicescitados("");
+                $sql = Citacion::veraprendicescitados("WHERE documento LIKE '%".$buscar."%' ");
                 echo '<div class="table-responsive">';
                 echo '<table class="table">';
                 echo  '<thead class="bg-danger">';
@@ -38,4 +41,3 @@
                 }
                 echo "</table>";
 ?>
-           

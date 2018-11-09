@@ -107,7 +107,7 @@
         </select><br>
 
         <input type="submit" name="button" id="button" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm"
-            style="width:5%" />
+            style="width:10%"><br>
     </form>
 
 

@@ -59,7 +59,7 @@ class Proyecto{
 
 
 	//METODO DE IMPRIMIR PROYECTO//
-	static function verproyectos($WHERE){
+	static function verproyectos($WHERE){-
 		$db = new Conexion();
 		$sql = "SELECT proyecto.id_proyecto, proyecto.documento, proyecto.fechainicio, proyecto.fechafinal, proyecto.nombre, proyecto.descripcion, usuario.nombre as nombresupervisor,estado.nombre as nombreestado
 		FROM proyecto
