@@ -73,5 +73,15 @@ static function eliminar($codigo){
 			echo '<script>location.href="../views/directivo/tablacitaciones.php"</script>';
 		}
 }
+
+static  function rowcitacion($WHERE){
+	$db = new Conexion();
+	$chek = "SELECT * FROM citacion $WHERE";
+	$output_sql = $db->query($chek);
+	$valido=$output_sql->num_rows;
+	return $valido;
+}
+
+
 }//FIN CLASE CITACION//
 ?>

@@ -15,7 +15,6 @@
                 ini_set('display_errors','off');
                 ini_set('display_startup_errors','off');
                 error_reporting(0);
-                $buscar = $_POST['T1'];
                 include_once'../../modelo/Conexion.php';
                 include_once'../../controlador/class.usuario.php';
                 $buscar=$_POST['T1'];

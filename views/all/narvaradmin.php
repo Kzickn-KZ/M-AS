@@ -18,6 +18,7 @@
                     <a class="dropdown-item" href="agregarsup.php">Agregar Supervisor</a>
                     <a class="dropdown-item" href="agregarficha.php">Fichas</a>
                     <a class="dropdown-item" href="agregarprograma.php">Programas</a>
+                    <a class="dropdown-item" href="reportehoras.php">Reporte Horas</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Necesitas Ayuda?</a>
                 </div>

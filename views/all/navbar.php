@@ -1,3 +1,9 @@
+<?php
+require_once'../../modelo/Conexion.php';
+require_once'../../controlador/class.citacion.php';
+$valido = Citacion::rowcitacion("WHERE id_usuario='$_SESSION[id_usuario]'")
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#">M-AS</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -15,7 +21,9 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="proyecto.php">Proyecto</a>
                             <a class="dropdown-item" href="updateuser.php">Actualizar Datos</a>
-                            <a class="dropdown-item" href="citaciones.php">Citacion <span class="badge badge-primary badge-pill">2</span></a>
+                            <a class="dropdown-item" href="citaciones.php">Citacion <span class="badge badge-primary badge-pill">
+                            <?php echo $valido?>
+                                </span></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Necesitas Ayuda?</a>
                         </div>

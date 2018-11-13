@@ -1,5 +1,4 @@
-<div class="box" id="contenido">
-            <center><br>
+<center><br>
 <!----------------AQUI VA TEXTO DE INICIO CON CALENDARIO-------------->
 <h3><strong>FORMULARIO PARA REGISTRAR HORAS HECHAS EN EL DIA</strong></h3>
         <em>(recuerde llenar el formulario el mismo dia, ya que no tendra podibilidad de llenarlo al dia
@@ -42,11 +41,3 @@
                 <!---FIN TEXTO--->
             </center>
             <br>
-            <br>
-            <div class="row-f luid">
-                <div class="span8">
-                </div>
-            </div>
-            <br />
-    </center>
-    </center>
