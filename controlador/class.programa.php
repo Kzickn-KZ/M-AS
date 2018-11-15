@@ -51,8 +51,7 @@ public function insertarPrograma(){
 		$db->query($sql_dat);
 		echo '<script language="javascript">alert("'.$mensaje.'");</script>';
 		echo '<script>location.href="../views/directivo/agregarprograma.php"</script>';
-
-
 	}
+
 }//FIN CLASE//
 ?>

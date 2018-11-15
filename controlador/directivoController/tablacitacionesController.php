@@ -20,7 +20,7 @@
                 echo  '<thead class="bg-danger">';
                 echo '<tr>';
                 echo '<th scope="col">Documento</th>';
-                echo '<th scope="col">Citador</th>';
+                //echo '<th scope="col">Citador</th>';
                 echo '<th scope="col">Fecha</th>';
                 echo '<th scope="col">Hora</th>';
                 echo '<th scope="col">Sede</th>';
@@ -32,7 +32,7 @@
                     echo "<tr class='success'>";
                     $arreglo[0];
                     echo "<td>$arreglo[2]</td>";
-                    echo "<td>$arreglo[1]</td>";
+                    //echo "<td>$arreglo[1]</td>";
                     echo "<td>$arreglo[3]</td>";
                     echo "<td>$arreglo[4]</td>";
                     echo "<td>$arreglo[5]</td>";

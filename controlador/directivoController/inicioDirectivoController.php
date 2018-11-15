@@ -23,7 +23,7 @@
         echo '<tr>';
         echo '<th scope="col">Documento</th>';
         echo '<th scope="col">Nombre</th>';
-        echo '<th scope="col">Apellido</th>';
+        //echo '<th scope="col">Apellido</th>';
         echo '<th scope="col">Estado</th>';
         echo '<th scope="col">Mirar</th>';
         echo '</tr>';
@@ -32,8 +32,8 @@
                 echo "<tr class='success'>";
         $arreglo[0];
         echo "<td style='width:37%'>$arreglo[1]</td>";
-        //echo "<td>$arreglo[2]</td>";
-        echo "<td style='width:37%'>$arreglo[3]</td>";
+        //echo "<td>$arreglo[2]</td>";s
+        //echo "<td style='width:37%'>$arreglo[3]</td>";
         echo "<td style='width:38%'>$arreglo[4]</td>";
         //echo "<td>$arreglo[5]</td>";
         //echo "<td>$arreglo[6]</td>";
@@ -41,7 +41,7 @@
         //echo "<td>$arreglo[8]</td>";
         //echo "<td>$arreglo[9]</td>";
         //echo "<td>$arreglo[10]</td>";
-        echo "<td>$arreglo[11]</td>";
+        echo "<td>$arreglo[15]</td>";
         echo "<td><a href='../../views/directivo/observar.php?codigo=$arreglo[0]'><button type='button' class='btn btn-dark'>Mirar</button></a></td>";
         }
         echo "</table>";

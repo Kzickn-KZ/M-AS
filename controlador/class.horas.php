@@ -92,10 +92,13 @@ static function cambiarEstado($estado, $codigo){
 
 static function sumadehoras($WHERE){
 		$db = new Conexion();
-		$sql = "SELECT SUM(horas_realizadas) as horitas , id_estado , tok FROM horas $WHERE";
+		$sql = "SELECT SUM(horas_realizadas) as horitas , id_estado , tok , DATE_FORMAT(fecha, '%m/%Y') as fechass FROM horas $WHERE";
 		$datos = $db->query($sql);
 		return $datos;
 }//FIN METODO SUMADEHORAS//
+
+
+
 
 
 

@@ -6,7 +6,7 @@ include_once '../controlador/class.citacion.php';
 include_once '../controlador/class.ficha.php';
 include_once '../controlador/class.notificar.php';
 include_once '../controlador/class.horas.php';
-include_once'../controlador/class.programa.php';
+include_once '../controlador/class.programa.php';
 
 
 //CODIGO PARA ACEPTAR APRENDICES REQUIERE LA CLASE USUARIO//

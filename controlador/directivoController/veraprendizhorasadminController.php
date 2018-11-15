@@ -53,15 +53,17 @@
         echo "</table>";
         echo "</div>";
             ?>
-</center>
-<br>
-<center>
-    <?php
-    /*
-            if ($horitas>=$horastotales) {
-            echo "<a href='../../controlador/prueba.php?codigo=$_GET[codigoo]&codigotok=2'><button type='button' class='btn btn-warning'>Reiniciar Horas</button></a>";
-            }
-            */
-            ?>
-</center>
+<?php
+        $sql = Horas::sumadehoras("WHERE documento='$_GET[codigoo]' and id_estado=3 and tok=1");
+        $filas=$sql->fetch_assoc();
+        $horitass=$filas['horitas'];
+        $fechass = $filas['fechass'];
+        $totals = $horitass-$horastotales;
+        $fechaac = date('m-y');
+            if($fechass<$fechaac){
+                echo "<script>toastr.error('DEBE UN TOTAL DE: ".-$totals." HORAS DE EL MES $fechass','EL APRENDIZ: $_GET[codigoo]')</script>";
+                }else{
+                        echo "<script>toastr.error('NO DEBE HORAS','EL APRENDIZ: $_GET[codigoo]')</script>";
+                }
+?>
 <br>
