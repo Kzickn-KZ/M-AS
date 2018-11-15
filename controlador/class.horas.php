@@ -101,6 +101,15 @@ static function sumadehoras($WHERE){
 
 
 
+static  function rowhoras($documento){
+	$db = new Conexion();
+	$chek = "SELECT * FROM horas WHERE MONTH(fecha) = MONTH(DATE_ADD(CURDATE(),INTERVAL -1 MONTH)) and documento='$documento'";
+	$output_sql = $db->query($chek);
+	return $output_sql;
+}
+
+
+
 
 
 
@@ -128,6 +137,14 @@ if($reinicio=1){
 	echo '<script language="javascript">alert("'.$mensaje.'")</script>';
 	echo '<script>location.href="../views/directivo/horasadmin.php"</script>';
 }
+
+
+
+
+
+
+
+
 
 
 } //fin class horas//

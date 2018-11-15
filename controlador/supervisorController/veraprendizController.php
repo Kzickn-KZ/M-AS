@@ -60,15 +60,17 @@
         }
         echo "</table>";
         echo "</div>";
-?>
+?><br>
 <!----ALERTA DE DEBER HORAS---->
+
 <?php
+$documento = $_GET['codigoo'];
+$prinf = Horas::rowhoras($documento);
+while($gf = $prinf->fetch_assoc()){
+    $alv = $gf['fecha'];
+}
 
-//FALTA UN ROW ROW//
-
-
-
-        $sql = Horas::sumadehoras("WHERE documento='$_GET[codigoo]' and id_estado=3 and tok=1");
+        $sql = Horas::sumadehoras("WHERE documento='$_GET[codigoo]' and id_estado=3 and tok=1 and fecha='$alv'");
         $filas=$sql->fetch_assoc();
         $horitass=$filas['horitas'];
         $fechass = $filas['fechass'];
