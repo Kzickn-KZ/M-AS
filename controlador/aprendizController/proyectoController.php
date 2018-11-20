@@ -17,17 +17,18 @@ while($row=mysqli_fetch_assoc($nomproyecto)){
 <?php
 //CONSULTA DE SABER SI YA LO TIENE REGISTRADO
 $chek = Proyecto::printrow("WHERE documento='$_SESSION[documento]' and id_estado=1");
+        $hoy = date("Y-m-d");
 		if ($chek->num_rows >= 1) {
             echo "<p><h3>USTED YA TIENE UN PROYECTO LLAMADO: <br> <p>".$nom."</p>EN ESTADO DE ACTIVO, SI NO APARECE ESTE ANUNCIO LA PROXIMA VEZ ES POR QUE EL SUPERVISOR SE LO HA DESACTIVADO Y TENDRA QUE INSERTAR OTRO<br> <BR>GRACIAS.</h3></p>";
 		}else{
             echo '
             <form method="post" action="../../controlador/ejecutaproyecto.php">
                     Fecha de inicio:
-                    <input type="date" name="fechainicio" id="fechainicio" style="width:45%; height:8%" class="form-control"
-                        required><br>
+                    <input type="date" name="fechainicio" id="fechainicio" min="'.$hoy.'" style="width:45%; height:8%" class="form-control"
+                        required value="'.$hoy.'"><br>
                     Fecha de terminacion:
                     <input type="date" name="fechafinal" id="fechafinal" style="width:45%; height:8%" class="form-control"
-                        required><br>
+                        required ><br>
                     Nombre del proyecto:
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre Proyecto" style="width:45%; height:8%" class="form-control"
                         required><br>

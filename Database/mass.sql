@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 30-10-2018 a las 14:57:51
+-- Tiempo de generación: 20-11-2018 a las 16:55:58
 -- Versión del servidor: 5.7.23
 -- Versión de PHP: 7.2.10
 
@@ -36,19 +36,16 @@ CREATE TABLE IF NOT EXISTS `citacion` (
   `fecha` date NOT NULL,
   `hora` time NOT NULL,
   `id_sede` int(11) NOT NULL,
-  `ambiente` varchar(20) NOT NULL,
+  `ambiente` int(11) NOT NULL,
   PRIMARY KEY (`id_citacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `citacion`
 --
 
 INSERT INTO `citacion` (`id_citacion`, `id_usuario`, `citador`, `fecha`, `hora`, `id_sede`, `ambiente`) VALUES
-(3, 12, '0', '2018-10-12', '06:45:00', 2, '205'),
-(4, 10, '0', '2018-10-25', '01:50:00', 2, '205'),
-(5, 10, '0', '2018-10-27', '12:30:00', 2, '205'),
-(6, 10, '0', '2018-10-19', '12:30:00', 3, '205');
+(16, 27, '0', '2018-11-18', '12:01:00', 4, 205);
 
 -- --------------------------------------------------------
 
@@ -87,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `ficha` (
   `nombre` int(20) NOT NULL,
   `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_ficha`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `ficha`
@@ -96,8 +93,131 @@ CREATE TABLE IF NOT EXISTS `ficha` (
 INSERT INTO `ficha` (`id_ficha`, `nombre`, `id_estado`) VALUES
 (1, 1320652, 1),
 (2, 6263526, 1),
-(3, 3123, 2),
-(4, 2, 1);
+(7, 1366239, 1),
+(8, 1438299, 1),
+(9, 1503687, 1),
+(10, 1578575, 1),
+(11, 1578550, 1),
+(13, 1578571, 1),
+(14, 1593502, 1),
+(15, 1621527, 1),
+(16, 1621531, 1),
+(17, 1621536, 1),
+(18, 1621551, 1),
+(19, 1621560, 1),
+(20, 1621561, 1),
+(21, 1621562, 1),
+(22, 1724862, 1),
+(23, 1738490, 1),
+(24, 1694146, 1),
+(25, 1694118, 1),
+(26, 1694118, 1),
+(27, 1694141, 1),
+(28, 1694142, 1),
+(29, 1694136, 1),
+(30, 1694161, 1),
+(31, 1694151, 1),
+(32, 1753598, 1),
+(33, 1753611, 1),
+(34, 1753615, 1),
+(35, 1753620, 1),
+(36, 1753627, 1),
+(37, 1753636, 1),
+(38, 1753929, 1),
+(39, 1753960, 1),
+(40, 1753997, 1),
+(41, 1366241, 1),
+(42, 1438303, 1),
+(43, 1438303, 1),
+(44, 1438318, 1),
+(45, 1503794, 1),
+(46, 1503794, 1),
+(47, 1503794, 1),
+(48, 1566598, 1),
+(49, 1566620, 1),
+(50, 1488683, 1),
+(51, 1621415, 1),
+(52, 1621427, 1),
+(53, 1621656, 1),
+(54, 1694167, 1),
+(55, 1694165, 1),
+(56, 1738484, 1),
+(57, 1694164, 1),
+(58, 1739202, 1),
+(59, 1503799, 1),
+(60, 1566614, 1),
+(61, 1593501, 1),
+(62, 1694086, 1),
+(63, 1694085, 1),
+(64, 1694085, 1),
+(65, 1753416, 1),
+(66, 1753422, 1),
+(67, 1753429, 1),
+(68, 1753546, 1),
+(69, 1753540, 1),
+(70, 1753543, 1),
+(71, 1753563, 1),
+(72, 1753566, 1),
+(73, 1754011, 1),
+(74, 1754015, 1),
+(75, 1754022, 1),
+(76, 1754011, 1),
+(77, 1754015, 1),
+(78, 1754022, 1),
+(79, 1753396, 1),
+(80, 1753407, 1),
+(81, 1753407, 1),
+(82, 1724913, 1),
+(83, 1565394, 1),
+(84, 1667824, 1),
+(85, 1749943, 1),
+(86, 1578666, 1),
+(87, 1506195, 1),
+(88, 1551628, 1),
+(89, 1438310, 1),
+(90, 1438308, 1),
+(91, 1438308, 1),
+(92, 1488534, 1),
+(93, 1539819, 1),
+(94, 1503616, 1),
+(95, 1503616, 1),
+(96, 1503606, 1),
+(97, 1566615, 1),
+(98, 1566621, 1),
+(99, 1566613, 1),
+(100, 1578687, 1),
+(101, 1578632, 1),
+(102, 1593506, 1),
+(103, 1621453, 1),
+(104, 1621465, 1),
+(105, 1621476, 1),
+(106, 1621462, 1),
+(107, 1621462, 1),
+(108, 1621651, 1),
+(109, 1694090, 1),
+(110, 1694087, 1),
+(111, 1694089, 1),
+(112, 1694088, 1),
+(113, 1694089, 1),
+(114, 1694088, 1),
+(115, 1694103, 1),
+(116, 1694104, 1),
+(117, 1694105, 1),
+(118, 1694106, 1),
+(119, 1694110, 1),
+(120, 1694109, 1),
+(121, 1694108, 1),
+(122, 1694107, 1),
+(123, 1694102, 1),
+(124, 1694101, 1),
+(125, 1753351, 1),
+(126, 1753373, 1),
+(127, 1753376, 1),
+(128, 1753379, 1),
+(129, 1753392, 1),
+(130, 1753363, 1),
+(131, 1753367, 1),
+(132, 1753926, 1);
 
 -- --------------------------------------------------------
 
@@ -116,16 +236,18 @@ CREATE TABLE IF NOT EXISTS `horas` (
   `id_estado` int(11) NOT NULL,
   `tok` int(11) NOT NULL,
   PRIMARY KEY (`id_horas`)
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `horas`
 --
 
 INSERT INTO `horas` (`id_horas`, `documento`, `fecha`, `horas_realizadas`, `descripcion`, `id_usuario`, `id_estado`, `tok`) VALUES
-(117, '123', '2018-10-30', 8, 'prueba1', 9, 3, 0),
-(118, '123', '2018-10-30', 8, 'prueba2', 9, 4, 0),
-(119, '123', '2018-10-30', 3, 'prueba3', 9, 3, 0);
+(174, '123', '2018-10-20', 1, 'asd', 9, 3, 0),
+(175, '123', '2018-11-20', 3, 'asdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffff', 9, 5, 0),
+(176, '333', '2018-11-20', 4, 'asdasd', 9, 3, 0),
+(177, '333', '2018-11-20', 5, 'asdasd', 9, 5, 0),
+(178, '123', '2018-11-20', 5, 'asdasd', 9, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -143,7 +265,16 @@ CREATE TABLE IF NOT EXISTS `novedades` (
   `id_usuario` int(11) NOT NULL,
   `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_novedades`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `novedades`
+--
+
+INSERT INTO `novedades` (`id_novedades`, `id_tipoNovedad`, `documento`, `fecha`, `descripcion`, `id_usuario`, `id_estado`) VALUES
+(1, 4, '123', '2018-11-20', 'asdasd', 9, 5),
+(2, 2, '123', '2018-11-20', 'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd', 9, 5),
+(3, 2, '123', '2018-11-20', 'asdasdasd', 9, 5);
 
 -- --------------------------------------------------------
 
@@ -157,15 +288,16 @@ CREATE TABLE IF NOT EXISTS `programa` (
   `nombre` varchar(20) NOT NULL,
   `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_programa`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `programa`
 --
 
 INSERT INTO `programa` (`id_programa`, `nombre`, `id_estado`) VALUES
-(1, 'ADSI', 0),
-(2, 'TPS', 0);
+(1, 'ADSI', 1),
+(2, 'TPS', 1),
+(3, 'DIM', 1);
 
 -- --------------------------------------------------------
 
@@ -184,7 +316,14 @@ CREATE TABLE IF NOT EXISTS `proyecto` (
   `id_usuario` int(11) NOT NULL,
   `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_proyecto`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `proyecto`
+--
+
+INSERT INTO `proyecto` (`id_proyecto`, `documento`, `fechainicio`, `fechafinal`, `nombre`, `descripcion`, `id_usuario`, `id_estado`) VALUES
+(1, 123, '2018-11-11', '2018-11-17', 'asdasd', 'asdasd', 9, 1);
 
 -- --------------------------------------------------------
 
@@ -310,7 +449,7 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `documento` int(12) NOT NULL,
-  `id_tipoDocumento` varchar(20) NOT NULL,
+  `id_tipoDocumento` int(11) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(20) NOT NULL,
   `correo` varchar(30) NOT NULL,
@@ -318,24 +457,25 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `contrasena` varchar(20) NOT NULL,
   `passadmin` varchar(20) NOT NULL,
   `passsuper` varchar(20) NOT NULL,
-  `id_sede` varchar(20) NOT NULL,
-  `id_programa` varchar(20) NOT NULL,
-  `id_ficha` varchar(20) NOT NULL,
-  `id_tipoUsuario` varchar(20) NOT NULL,
-  `id_rol` varchar(20) NOT NULL,
-  `id_estado` varchar(20) NOT NULL,
+  `id_sede` int(11) NOT NULL,
+  `id_programa` int(11) NOT NULL,
+  `id_ficha` int(11) NOT NULL,
+  `id_tipoUsuario` int(11) NOT NULL,
+  `id_rol` int(11) NOT NULL,
+  `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `documento`, `id_tipoDocumento`, `nombre`, `apellido`, `correo`, `telefono`, `contrasena`, `passadmin`, `passsuper`, `id_sede`, `id_programa`, `id_ficha`, `id_tipoUsuario`, `id_rol`, `id_estado`) VALUES
-(1, 0, '2', 'ADMINnnnnn', 'ADMINnnnnn', 'admin@gmail.com', '0', '', 'adminpost', '', '3', '1', '1', '1', '3', '1'),
-(9, 555, '2', 'supervisor', 'supervisor', 'supp@gmail.com', '123', '', '', '555', '2', '1', '1', '1', '2', '1'),
-(27, 123, '1', 'usuario', 'usuario', 'user@gailc.c', '1233', '123', '', '', '2', '1', '4', '2', '1', '1'),
-(29, 1233511946, '1', 'edw', 'edew', 'ea@gmail.com', '123123', '123', '', '', '2', '1', '1', '1', '1', '5');
+(1, 0, 2, 'ADMINnnnnn', 'ADMINnnnnn', 'admin@gmail.com', '0', '', 'adminpost', '', 3, 1, 1, 1, 3, 1),
+(9, 555, 2, 'supervisor', 'supervisor', 'supp@gmail.com', '123', '', '', '555', 2, 1, 1, 1, 2, 1),
+(27, 123, 1, 'usuario', 'usuario', 'user@gailc.c', '1233', '123', '', '', 2, 3, 117, 1, 1, 1),
+(32, 333, 2, '333', '333', 'loca@gmail.com', '333', '333', '', '', 4, 1, 18, 1, 1, 1),
+(33, 321, 1, 'prueba', 'prueba', 'prueba@gmail.com', '321', '321', '', '', 2, 2, 112, 2, 1, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
