@@ -54,16 +54,23 @@
         echo "</div>";
             ?>
 <?php
-        $sql = Horas::sumadehoras("WHERE documento='$_GET[codigoo]' and id_estado=3 and tok=1");
+$documento = $_GET['codigoo'];
+$prinf = Horas::rowhoras($documento);
+while($gf = $prinf->fetch_assoc()){
+    $alv = $gf['fecha'];
+}
+
+        $sql = Horas::sumadehoras("WHERE documento='$_GET[codigoo]' and id_estado=3 and tok=1 and fecha='$alv'");
         $filas=$sql->fetch_assoc();
         $horitass=$filas['horitas'];
         $fechass = $filas['fechass'];
         $totals = $horitass-$horastotales;
         $fechaac = date('m-y');
-            if($fechass<$fechaac){
-                echo "<script>toastr.error('DEBE UN TOTAL DE: ".-$totals." HORAS DE EL MES $fechass','EL APRENDIZ: $_GET[codigoo]')</script>";
-                }else{
-                        echo "<script>toastr.error('NO DEBE HORAS','EL APRENDIZ: $_GET[codigoo]')</script>";
+            if($fechass){
+                echo "<script>toastr.warning('DEBE UN TOTAL DE: ".-$totals." HORAS DEl MES $fechass','EL APRENDIZ: $_GET[codigoo]')</script>";
+            }else{
+                        echo "<script>toastr.warning('NO DEBE HORAS','EL APRENDIZ: $_GET[codigoo]')</script>";
                 }
 ?>
 <br>
+

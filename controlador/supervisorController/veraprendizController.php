@@ -22,6 +22,10 @@
                     }else{
                         $horastotales = 40;
                     }
+                    ///////////////////////////////
+
+
+                    ///////////////////////////////
                     $total = $horitas-$horastotales;
                     if ($horitas>=$horastotales) {
                     echo "<b>EL APRENDIZ YA COMPLETO SUS HORAS</b>";
@@ -76,8 +80,8 @@ while($gf = $prinf->fetch_assoc()){
         $fechass = $filas['fechass'];
         $totals = $horitass-$horastotales;
         $fechaac = date('m-y');
-            if($fechass<$fechaac){
-                echo "<script>toastr.warning('DEBE UN TOTAL DE: ".-$totals." HORAS DE EL MES $fechass','EL APRENDIZ: $_GET[codigoo]')</script>";
+            if($fechass){
+                echo "<script>toastr.warning('DEBE UN TOTAL DE: ".-$totals." HORAS DEl MES $fechass','EL APRENDIZ: $_GET[codigoo]')</script>";
             }else{
                         echo "<script>toastr.warning('NO DEBE HORAS','EL APRENDIZ: $_GET[codigoo]')</script>";
                 }
