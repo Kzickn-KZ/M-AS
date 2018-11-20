@@ -20,7 +20,7 @@ $pdf->header();
 
 
 $datosReporte = $seleccion->seleccionar_datos4($usu);
-$miCabecera = array( 'Documento', 'Fecha', 'Horas realizadas','Descripcion','Supervisor a cargo','Estado',);
+$miCabecera = array( 'Documento', 'Fecha', 'Horas realizadas','Supervisor a cargo','Estado','Descripcion');
 
 $pdf->tablaVertical($miCabecera, $datosReporte);
 $pdf->Output(); //Salida al navegador

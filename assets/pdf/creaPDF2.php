@@ -14,7 +14,7 @@ $pdf->header();
 
 
 $datosReporte = $seleccion->seleccionar_datos2();
-$miCabecera = array( 'Tipo Novedad', 'Documento', 'Fecha','Descripcion','Supervisor a cargo','Estado');
+$miCabecera = array( 'Tipo Novedad', 'Documento', 'Fecha','Supervisor a cargo','Estado','Descripcion');
 
 $pdf->tablaVertical($miCabecera, $datosReporte);
 $pdf->Output(); //Salida al navegador

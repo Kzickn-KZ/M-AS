@@ -3,7 +3,7 @@
                 <em>(Aprendices aceptados puede cambiar el estado )</em>
                     <div id="pdfico">
                 <a href="../../assets/pdf/creaPDF6.php"><img src="../../assets/img/pdf.png" style="Width:15%;"></a>
-                <img src="../../assets/img/ex.png" style="Width:15%;">
+                <a href="../../assets/PHPExcel/reporte6.php"><img src="../../assets/img/ex.png" style="Width:15%;"></a>
                     </div>
                     <form name="form1" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="cdr" >
                     <p><input name="T1"  type="text" style="width:30%; height:5%" class="form-control" size="20"></p>

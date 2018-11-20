@@ -26,11 +26,11 @@ class PDF extends FPDF
 
     function cabeceraVertical($cabecera)
     {
-        $this->SetXY(15, 93);
+        $this->SetXY(85, 93);
         $this->SetFont('Arial','B',10);
         $this->SetFillColor(255, 0, 0);//Fondo verde de celda
         $this->SetTextColor(240, 255, 240); //Letra color blanco
-        $ejeX = 15;
+        $ejeX = 85;
         foreach($cabecera as $fila)
         {
             $this->RoundedRect($ejeX, 93, 40, 7, 2, 'FD');
@@ -41,19 +41,17 @@ class PDF extends FPDF
 
     function datosVertical($datos)
     {
-        $this->SetXY(90, 100);
+        $this->SetXY(75, 100);
         $this->SetFont('Arial','',10);
         $this->SetFillColor(229, 229, 229); //Gris tenue de cada fila
         $this->SetTextColor(3, 3, 3); //Color del texto: Negro
         $bandera = false; //Para alternar el relleno
         $ejeY = 100; //Aquí se encuentra la primer CellFitSpace e irá incrementando
         $letra = 'D'; //'D' Dibuja borde de cada CellFitSpace -- 'FD' Dibuja borde y rellena
-        $this->Ln(1);
-        
-   
+        $this->Ln(0);
         foreach($datos as $fila)
         {
-            $this->Cell(5,7,'','',NULL,NULL,NULL,NULL);
+            $this->Cell(75,7,'','',NULL,NULL,NULL,NULL);
             //Por cada 3 CellFitSpace se crea un RoundedRect encimado
             //El parámetro $letra de RoundedRect cambiará en cada iteración
             //para colocar FD y D, la primera iteración es D
@@ -66,10 +64,10 @@ class PDF extends FPDF
             $this->Cell(40,7,$fila['horas_realizadas'],'1',NULL,NULL,NULL,NULL);
             $this->Cell(40,7,$fila['nombresupervisor'],'1',NULL,NULL,NULL,NULL);
             $this->Cell(40,7,$fila['nombreestado'],'1',NULL,NULL,NULL,NULL);
-            $this->Cell(195,7,$fila['descripcion'],'1',NULL,NULL,NULL,NULL);
+            $this->MultiCell(40,7,$fila['descripcion'],'1',NULL,NULL,NULL,NULL);
 
 
-            $this->Ln(7);
+            $this->Ln(0);
             /*
             $this->CellFitSpace(40,7, utf8_decode($fila['documento']),'LR', 0 , 'C' );
             $this->CellFitSpace(40,7, utf8_decode($fila['fecha']),'LR', 0 , 'C' );
