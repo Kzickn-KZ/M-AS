@@ -1,3 +1,43 @@
+<script  src="../../assets/js/jquery-3.2.1.js"></script>
+    <script  src="../../assets/js/jquery.validate.js"></script>
+    <script>
+    $(document).ready(function(){
+var requerido="LLENE ESTE CAMPO";
+jQuery.validator.addMethod("letras", function(value, element) {
+return this.optional( element ) || /^[a-záéóóúàèìòùäëïöüñ\s]+$/i.test( value );
+}, 'Solo se permiten letras.');
+$("#ffff").validate({
+rules:{
+nombre:{
+    required:true,
+    letras:true
+},
+apellido:{
+    required:true,
+    letras:true
+}
+},
+messages:{
+nombre:{
+required:requerido
+},
+messages:{
+    apellido:{
+    required:requerido
+    }
+}
+
+}
+
+
+});
+});
+</script>
+<style type="text/css">
+.error{
+display: block;
+}
+</style>
             <center><br>
                 <h3><strong>TABLA DE FICHAS</strong></h3>
                 <em>(tabla para agregar fichas y  ver fichas)</em></acronym><br><br>
@@ -60,9 +100,9 @@
             </div>
             <div class="modal-body">
 
-            <form method="POST" action="../../controlador/ejecutaficha.php">
+            <form method="POST" action="../../controlador/ejecutaficha.php" id="ffff" name="ffff">
                     Agregar ficha:
-                    <input type="text" name="ficha" id="ficha" style="width:50%; height:8%" class="form-control"
+                    <input type="number" name="ficha" id="ficha" style="width:50%; height:8%" class="form-control"
                         placeholder="Ficha" required><br>
                     <input type="submit" name="" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm" style="width:15%">
                 </form>

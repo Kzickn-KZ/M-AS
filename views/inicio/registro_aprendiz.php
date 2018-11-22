@@ -3,6 +3,48 @@
 include_once'../all/head.php';
 include_once'../all/header.php';
 ?>
+<script  src="../../assets/js/jquery-3.2.1.js"></script>
+    <script  src="../../assets/js/jquery.validate.js"></script>
+    <script>
+      $(document).ready(function(){
+var requerido="LLENE ESTE CAMPO";
+jQuery.validator.addMethod("letras", function(value, element) {
+return this.optional( element ) || /^[a-záéóóúàèìòùäëïöüñ\s]+$/i.test( value );
+}, 'Solo se permiten letras.');
+$("#form1").validate({
+rules:{
+  nombre:{
+    required:true,
+    letras:true
+  },
+  apellido:{
+    required:true,
+    letras:true
+  }
+}
+  ,
+messages:{
+  nombre:{
+  required:requerido
+  },
+  messages:{
+    apellido:{
+    required:requerido
+    }
+  }
+
+}
+
+
+});
+});
+</script>
+<style type="text/css">
+.error{
+display: block;
+}
+</style>
+
 <!-------CABECERA------>
   <!---------------LOGIN LOGIN LOGIN---------------->
   <center>
@@ -10,11 +52,11 @@ include_once'../all/header.php';
       <form id="form1" name="form1" method="POST" action="../../controlador/insertarusuario.php">
         <h1>REGISTRATE</h1>
         Documento
-        <input name="documento" id="documento" onmouseout="oukj" required="required" type="text" placeholder="Documento"
+        <input name="documento" id="documento"  required="required number" type="number" placeholder="Documento"
           style="width:78%; height:10%" class="form-control"></td>
         Tipo de documento
         <select name="id_tipoDocumento" id="id_tipoDocumento" style="width:78%; height:10%" class="form-control">
-          <option>Seleccione..</option>
+        <option>seleccione...</option>
           <?php
               //CONEXION BASE DE DATOS//
               require_once'../../modelo/Conexion.php';
@@ -37,14 +79,14 @@ include_once'../all/header.php';
           <input type="email" name="correo" required="required" id="correo" placeholder="Correo" style="width:78%; height:10%"
           class="form-control">
         Telefono
-        <input name="telefono" id="telefono" type="text" placeholder="telefono" required="required" style="width:78%; height:10%"
+        <input name="telefono" id="telefono" type="number" placeholder="telefono" required="required" style="width:78%; height:10%"
           class="form-control">
         Contraseña
         <input name="contrasena" id="contrasena" type="password" placeholder="Contraseña" required="required" style="width:78%; height:10%"
           class="form-control">
         Sede
         <select name="id_sede" id="id_sede" style="width:78%; height:10%" class="form-control">
-          <option>Seleccione..</option>
+        <option>seleccione...</option>
           <?php
                 //CONEXION BASE DE DATOS//
         require_once "../../modelo/conexion.php";
@@ -59,7 +101,7 @@ include_once'../all/header.php';
         </select>
         Programa
         <select name="id_programa" id="id_programa" style="width:78%; height:10%" class="form-control">
-          <option>Seleccione..</option>
+        <option>seleccione...</option>
           <?php
             //CONEXION BASE DE DATOS//
         require_once "../../modelo/conexion.php";
@@ -74,7 +116,7 @@ include_once'../all/header.php';
         </select>
         Ficha
         <select name="id_ficha" id="id_ficha" style="width:78%; height:10%" class="form-control">
-          <option>Seleccione..</option>
+        <option>seleccione...</option>
           <?php
                 //CONEXION BASE DE DATOS//
         require_once "../../modelo/conexion.php";
@@ -89,7 +131,7 @@ include_once'../all/header.php';
         </select>
         Deseas inscribirte a:
         <select name="id_tipoUsuario" id="id_tipoUsuario" style="width:78%; height:10%" class="form-control">
-          <option>Seleccione..</option>
+        <option>seleccione...</option>
           <?php
                 //CONEXION BASE DE DATOS//
         require_once "../../modelo/conexion.php";

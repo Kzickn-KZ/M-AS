@@ -64,7 +64,7 @@ class Usuario{
 				VALUES ('$this->documento','$this->id_tipoDocumento','$this->nombre','$this->apellido','$this->correo','$this->telefono','$this->contrasena','$this->passadmin','$this->passsuper','$this->id_sede','$this->id_programa','$this->id_ficha','$this->id_tipoUsuario','$this->id_rol','$this->id_estado')";
 				$this->db->query($sql_insertarusuario);
 				if($this->db->errno){
-				die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR")location.href="../views/registro_aprendiz.php;" </script>');
+				die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR DILIGENCIA BIEN LOS DATOS");location.href="../views/inicio/registro_aprendiz.php"</script>');
 				}else{
 				echo '<script language="javascript">alert("SE HA REGISTRADO CORRECTAMENTE, ENTRASTE A UN PROCESO DE SELECCION, EN UNOS DIAS TE CONFIRMARAN Y PODRAS ACCEDER A EL SISTEMA");';
 				echo 'location.href ="../index.php"</script>';
@@ -81,7 +81,7 @@ public function insertarsupervisor(){
 			$db = new Conexion();
 			$valido = $this->validardoc($this->documento);
 			if ($valido) {
-			echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../views/directivo/agregarsupp.php"</script>';
+			echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../views/directivo/agregarsup.php"</script>';
 			} else {
 			$sql_insertarsup = "INSERT INTO usuario
 			(documento,id_tipoDocumento,nombre,apellido,correo,telefono,contrasena,passadmin,passsuper,id_sede,id_programa,id_ficha,id_tipoUsuario,
@@ -89,7 +89,7 @@ public function insertarsupervisor(){
 			VALUES ('$this->documento','$this->id_tipoDocumento','$this->nombre','$this->apellido','$this->correo','$this->telefono','$this->contrasena','$this->passadmin','$this->passsuper','$this->id_sede','$this->id_programa','$this->id_ficha','$this->id_tipoUsuario','$this->id_rol','$this->id_estado')";
 			$this->db->query($sql_insertarsup);
 			if($this->db->errno){
-			die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR EL SUPERVISOR")location.href="../views/directivo/agregarsup.php;" </script>');
+			die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR EL SUPERVISOR");location.href="../views/directivo/agregarsup.php" </script>');
 			}else{
 			echo '<script language="javascript">alert("SE HA REGISTRADO CORRECTAMENTE UN NUEVO SUPERVISOR");';
 			echo 'location.href ="../views/directivo/agregarsup.php"</script>';

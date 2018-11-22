@@ -8,6 +8,7 @@
                 <?php
                 include_once '../../controlador/class.horas.php';
                 include_once'../../modelo/Conexion.php';
+                ////////////////////SUMA DE HORAS /////////////////////////
                 $sql = Horas::sumadehoras("WHERE documento='$_SESSION[documento]' and id_estado=3 and tok=0");
 				$fila=$sql->fetch_assoc();
                 $horitas=$fila['horitas'];
@@ -16,6 +17,26 @@
                 }else{
                     $horastotales= 40;
                 }
+
+/////////////////////HORAS FALTANTES///////////////////////
+                $documento = $_SESSION['documento'];
+                $prinf = Horas::rowhoras($documento);
+                while($gf = $prinf->fetch_assoc()){
+                $alv = $gf['fecha'];
+        }
+        $sql = Horas::sumadehoras("WHERE documento='$_SESSION[documento]' and id_estado=3 and tok=1 and fecha='$alv'");
+        $filas=$sql->fetch_assoc();
+        $horitass=$filas['horitas'];
+        $fechass = $filas['fechass'];
+        $totals = $horitass-$horastotales;
+        $fechaac = date('m-y');
+            if($fechass){
+                echo "<script>toastr.warning('DEBE UN TOTAL DE: ".-$totals." HORAS DEl MES $fechass','EL APRENDIZ: $_SESSION[documento]')</script>";
+            }else{
+                        echo "<script>toastr.warning('NO DEBE HORAS','EL APRENDIZ: $_SESSION[documento]')</script>";
+                }
+/////////////////////FIN HORAS FALTANTES///////////////////////
+
                 $total = $horitas-$horastotales;
                 if ($horitas>=$horastotales){
                 echo "<b>EL APRENDIZ YA COMPLETO SUS HORAS</b>";
@@ -25,6 +46,7 @@
                 echo "<br>";
                 echo "<br>";
                 ?>
+
                 <?php
                 $registros=Horas::imprimirHoras("WHERE horas.documento='$_SESSION[documento]' and tok=0 ORDER BY horas.fecha ASC");
             echo '<div class="table-responsive table-hover">';
@@ -69,23 +91,5 @@
         ?>
             <br>
             <!---FIN TEXTO--->
-            <?php
-$documento = $_SESSION['documento'];
-$prinf = Horas::rowhoras($documento);
-while($gf = $prinf->fetch_assoc()){
-    $alv = $gf['fecha'];
-}
 
-        $sql = Horas::sumadehoras("WHERE documento='$_SESSION[documento]' and id_estado=3 and tok=1 and fecha='$alv'");
-        $filas=$sql->fetch_assoc();
-        $horitass=$filas['horitas'];
-        $fechass = $filas['fechass'];
-        $totals = $horitass-$horastotales;
-        $fechaac = date('m-y');
-            if($fechass){
-                echo "<script>toastr.warning('DEBE UN TOTAL DE: ".-$totals." HORAS DEl MES $fechass','EL APRENDIZ: $_SESSION[documento]')</script>";
-            }else{
-                        echo "<script>toastr.warning('NO DEBE HORAS','EL APRENDIZ: $_SESSION[documento]')</script>";
-                }
-?>
 <br>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 20-11-2018 a las 16:55:58
+-- Tiempo de generación: 22-11-2018 a las 13:38:08
 -- Versión del servidor: 5.7.23
 -- Versión de PHP: 7.2.10
 
@@ -38,14 +38,7 @@ CREATE TABLE IF NOT EXISTS `citacion` (
   `id_sede` int(11) NOT NULL,
   `ambiente` int(11) NOT NULL,
   PRIMARY KEY (`id_citacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `citacion`
---
-
-INSERT INTO `citacion` (`id_citacion`, `id_usuario`, `citador`, `fecha`, `hora`, `id_sede`, `ambiente`) VALUES
-(16, 27, '0', '2018-11-18', '12:01:00', 4, 205);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -93,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `ficha` (
 INSERT INTO `ficha` (`id_ficha`, `nombre`, `id_estado`) VALUES
 (1, 1320652, 1),
 (2, 6263526, 1),
-(7, 1366239, 1),
+(7, 1366239, 2),
 (8, 1438299, 1),
 (9, 1503687, 1),
 (10, 1578575, 1),
@@ -236,18 +229,7 @@ CREATE TABLE IF NOT EXISTS `horas` (
   `id_estado` int(11) NOT NULL,
   `tok` int(11) NOT NULL,
   PRIMARY KEY (`id_horas`)
-) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `horas`
---
-
-INSERT INTO `horas` (`id_horas`, `documento`, `fecha`, `horas_realizadas`, `descripcion`, `id_usuario`, `id_estado`, `tok`) VALUES
-(174, '123', '2018-10-20', 1, 'asd', 9, 3, 0),
-(175, '123', '2018-11-20', 3, 'asdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffffasdaffff', 9, 5, 0),
-(176, '333', '2018-11-20', 4, 'asdasd', 9, 3, 0),
-(177, '333', '2018-11-20', 5, 'asdasd', 9, 5, 0),
-(178, '123', '2018-11-20', 5, 'asdasd', 9, 5, 0);
+) ENGINE=InnoDB AUTO_INCREMENT=180 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -265,16 +247,7 @@ CREATE TABLE IF NOT EXISTS `novedades` (
   `id_usuario` int(11) NOT NULL,
   `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_novedades`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `novedades`
---
-
-INSERT INTO `novedades` (`id_novedades`, `id_tipoNovedad`, `documento`, `fecha`, `descripcion`, `id_usuario`, `id_estado`) VALUES
-(1, 4, '123', '2018-11-20', 'asdasd', 9, 5),
-(2, 2, '123', '2018-11-20', 'asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd', 9, 5),
-(3, 2, '123', '2018-11-20', 'asdasdasd', 9, 5);
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -316,14 +289,7 @@ CREATE TABLE IF NOT EXISTS `proyecto` (
   `id_usuario` int(11) NOT NULL,
   `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_proyecto`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `proyecto`
---
-
-INSERT INTO `proyecto` (`id_proyecto`, `documento`, `fechainicio`, `fechafinal`, `nombre`, `descripcion`, `id_usuario`, `id_estado`) VALUES
-(1, 123, '2018-11-11', '2018-11-17', 'asdasd', 'asdasd', 9, 1);
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -464,18 +430,14 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `id_rol` int(11) NOT NULL,
   `id_estado` int(11) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `documento`, `id_tipoDocumento`, `nombre`, `apellido`, `correo`, `telefono`, `contrasena`, `passadmin`, `passsuper`, `id_sede`, `id_programa`, `id_ficha`, `id_tipoUsuario`, `id_rol`, `id_estado`) VALUES
-(1, 0, 2, 'ADMINnnnnn', 'ADMINnnnnn', 'admin@gmail.com', '0', '', 'adminpost', '', 3, 1, 1, 1, 3, 1),
-(9, 555, 2, 'supervisor', 'supervisor', 'supp@gmail.com', '123', '', '', '555', 2, 1, 1, 1, 2, 1),
-(27, 123, 1, 'usuario', 'usuario', 'user@gailc.c', '1233', '123', '', '', 2, 3, 117, 1, 1, 1),
-(32, 333, 2, '333', '333', 'loca@gmail.com', '333', '333', '', '', 4, 1, 18, 1, 1, 1),
-(33, 321, 1, 'prueba', 'prueba', 'prueba@gmail.com', '321', '321', '', '', 2, 2, 112, 2, 1, 1);
+(1, 0, 2, 'ADMIN', 'ADMIN', 'admin@gmail.com', '0', '', 'adminpost', '', 3, 1, 1, 1, 3, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

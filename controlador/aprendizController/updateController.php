@@ -1,3 +1,44 @@
+<script  src="../../assets/js/jquery-3.2.1.js"></script>
+    <script  src="../../assets/js/jquery.validate.js"></script>
+    <script>
+      $(document).ready(function(){
+var requerido="LLENE ESTE CAMPO";
+jQuery.validator.addMethod("letras", function(value, element) {
+return this.optional( element ) || /^[a-záéóóúàèìòùäëïöüñ\s]+$/i.test( value );
+}, 'Solo se permiten letras.');
+$("#form3").validate({
+rules:{
+  nombre:{
+    required:true,
+    letras:true
+  },
+  apellido:{
+    required:true,
+    letras:true
+  }
+}
+  ,
+messages:{
+  nombre:{
+  required:requerido
+  },
+  messages:{
+    apellido:{
+    required:requerido
+    }
+  }
+
+}
+
+
+});
+});
+</script>
+<style type="text/css">
+.error{
+display: block;
+}
+</style>
 <center><br>
     <!----------------AQUI VA TEXTO DE INICIO CON CALENDARIO-------------->
     <h3><strong>ACTUALIZACION DE DATOS</strong></h3>
@@ -12,13 +53,13 @@
         ?>
 
 
-    <form action="../../controlador/ejecutaupdateuser.php" method="POST">
+    <form action="../../controlador/ejecutaupdateuser.php" method="POST" id="form3" name="form3">
         Documento
-        <input name="documento" id="documento" value="<?php echo $regee[documento]?>" required="required" type="text"
+        <input name="documento" id="documento" value="<?php echo $regee[documento]?>" required="required" type="number"
             placeholder="Documento" style="width:30%; height:8%" class="form-control"></td>
-        Tipo de documentoñ
+        Tipo de documento
         <select name="id_tipoDocumento" id="id_tipoDocumento" style="width:30%; height:8%" class="form-control">
-            <option>Seleccione..</option>
+        <option>seleccione...</option>
             <?php
                 //CONEXION BASE DE DATOS//
                 require_once "../../controlador/class.tipodocumento.php";
@@ -40,14 +81,14 @@
         <input type="email" name="correo" value="<?php echo $regee[correo]?>" required="required" id="correo"
             placeholder="Correo" style="width:30%; height:8%" class="form-control">
         Telefono
-        <input name="telefono" id="telefono" value="<?php echo $regee[telefono]?>" type="text" placeholder="telefono"
+        <input name="telefono" id="telefono" value="<?php echo $regee[telefono]?>" type="number" placeholder="telefono"
             required="required" style="width:30%; height:8%" class="form-control">
         Contraseña
         <input name="contrasena" id="contrasena" type="password" value="<?php echo $regee[contrasena]?>" placeholder="Contraseña"
             required="required" style="width:30%; height:8%" class="form-control">
         Sede
         <select name="id_sede" id="id_sede" style="width:30%; height:8%" class="form-control">
-            <option>Seleccione..</option>
+        <option>seleccione...</option>
             <?php
                 //CONEXION BASE DE DATOS//
                 require_once "../../modelo/conexion.php";
@@ -62,7 +103,7 @@
         </select>
         Programa
         <select name="id_programa" id="id_programa" style="width:30%; height:8%" class="form-control">
-            <option>Seleccione..</option>
+        <option>seleccione...</option>
             <?php
                 //CONEXION BASE DE DATOS//
                 require_once "../../modelo/conexion.php";
@@ -77,7 +118,7 @@
         </select>
         Ficha
         <select name="id_ficha" id="id_ficha" style="width:30%; height:8%" class="form-control">
-            <option>Seleccione..</option>
+        <option>seleccione...</option>
             <?php
                 //CONEXION BASE DE DATOS//
                 require_once "../../modelo/conexion.php";
@@ -92,7 +133,7 @@
         </select>
         Deseas inscribirte a:
         <select name="id_tipoUsuario" id="id_tipoUsuario" style="width:30%; height:8%" class="form-control">
-            <option>Seleccione..</option>
+        <option>seleccione...</option>
             <?php
                 //CONEXION BASE DE DATOS//
                 require_once "../../modelo/conexion.php";

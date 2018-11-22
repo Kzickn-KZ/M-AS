@@ -1,3 +1,44 @@
+<script  src="../../assets/js/jquery-3.2.1.js"></script>
+    <script  src="../../assets/js/jquery.validate.js"></script>
+    <script>
+      $(document).ready(function(){
+var requerido="LLENE ESTE CAMPO";
+jQuery.validator.addMethod("letras", function(value, element) {
+return this.optional( element ) || /^[a-záéóóúàèìòùäëïöüñ\s]+$/i.test( value );
+}, 'Solo se permiten letras.');
+$("#form2").validate({
+rules:{
+  nombre:{
+    required:true,
+    letras:true
+  },
+  descripcion:{
+    required:true,
+    letras:true
+  }
+}
+  ,
+messages:{
+  nombre:{
+  required:requerido
+  },
+  messages:{
+    descripcion:{
+    required:requerido
+    }
+  }
+
+}
+
+
+});
+});
+</script>
+<style type="text/css">
+.error{
+display: block;
+}
+</style>
 
             <center><br>
                 <!----------------AQUI VA TEXTO DE INICIO CON CALENDARIO-------------->
@@ -22,7 +63,7 @@ $chek = Proyecto::printrow("WHERE documento='$_SESSION[documento]' and id_estado
             echo "<p><h3>USTED YA TIENE UN PROYECTO LLAMADO: <br> <p>".$nom."</p>EN ESTADO DE ACTIVO, SI NO APARECE ESTE ANUNCIO LA PROXIMA VEZ ES POR QUE EL SUPERVISOR SE LO HA DESACTIVADO Y TENDRA QUE INSERTAR OTRO<br> <BR>GRACIAS.</h3></p>";
 		}else{
             echo '
-            <form method="post" action="../../controlador/ejecutaproyecto.php">
+            <form method="post" action="../../controlador/ejecutaproyecto.php" id="form2" name="form2">
                     Fecha de inicio:
                     <input type="date" name="fechainicio" id="fechainicio" min="'.$hoy.'" style="width:45%; height:8%" class="form-control"
                         required value="'.$hoy.'"><br>
@@ -36,7 +77,8 @@ $chek = Proyecto::printrow("WHERE documento='$_SESSION[documento]' and id_estado
                     <textarea type="text" name="descripcion" id="descripcion" placeholder="Descripcion" style="width:45%; height:8%" class="form-control" required></textarea><br>
                     Supervisor a cargo:
                     <select name="supervisor" id="supervisor" style="width:45%; height:8%" class="form-control"
-                        required><option>Seleccione...</option>
+                        required>
+                        <option>seleccione...</option>
                         ';
                 //CONEXION BASE DE DATOS//
         require_once "../../controlador/class.usuario.php";

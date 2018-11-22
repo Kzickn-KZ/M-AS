@@ -1,4 +1,44 @@
+<script  src="../../assets/js/jquery-3.2.1.js"></script>
+    <script  src="../../assets/js/jquery.validate.js"></script>
+    <script>
+      $(document).ready(function(){
+var requerido="LLENE ESTE CAMPO";
+jQuery.validator.addMethod("letras", function(value, element) {
+return this.optional( element ) || /^[a-záéóóúàèìòùäëïöüñ\s]+$/i.test( value );
+}, 'Solo se permiten letras.');
+$("#formm").validate({
+rules:{
+  nombre:{
+    required:true,
+    letras:true
+  },
+  apellido:{
+    required:true,
+    letras:true
+  }
+}
+  ,
+messages:{
+  nombre:{
+  required:requerido
+  },
+  messages:{
+    apellido:{
+    required:requerido
+    }
+  }
 
+}
+
+
+});
+});
+</script>
+<style type="text/css">
+.error{
+display: block;
+}
+</style>
             <center><br>
 
                 <h3><strong>TABLA ACTUALIZAR DATOS</strong></h3>
@@ -13,9 +53,9 @@
                 ?>
 
 
-                    <form action="../../controlador/ejecutaactualizaadmin.php" method="POST">
+                    <form action="../../controlador/ejecutaactualizaadmin.php" method="POST" id="formm" name="formm">
                 Documento:
-            <input type="text" name="documento" id="documento" value="<?php echo $arra[documento]?>" style="width:30%; height:6%" class="form-control"
+            <input type="number" name="documento" id="documento" value="<?php echo $arra[documento]?>" style="width:30%; height:6%" class="form-control"
             required placeholder="Documento">
             Tipo Documento:
             <select id="id_tipoDocumento" name="id_tipoDocumento" value="<?php echo $arra[tipodedocumento]?>" style="width:30%; height:6%" class="form-control"
@@ -41,7 +81,7 @@
                 <input type="email" name="correo" id="correo" value="<?php echo $arra[correo]?>" style="width:30%; height:6%" class="form-control"
                 required placeholder="Correo">
                 Telefono:
-                <input type="text" name="telefono" id="telefono" value="<?php echo $arra[telefono]?>" style="width:30%; height:6%" class="form-control"
+                <input type="number" name="telefono" id="telefono" value="<?php echo $arra[telefono]?>" style="width:30%; height:6%" class="form-control"
                 required placeholder="Telefono">
                 Contraseña:
                 <input type="text" name="passadmin" id="passadmin" value="<?php echo $arra[passadmin]?>" style="width:30%; height:6%" class="form-control"

@@ -15,4 +15,5 @@ $id_rol = 1;
 $id_estado = 5;
 $Usuario = new Usuario($documento, $id_tipoDocumento, $nombre, $apellido, $correo,$telefono, $contrasena,$passadmin,$passsuper, $id_sede, $id_programa, $id_ficha, $id_tipoUsuario, $id_rol, $id_estado);
 $Usuario->insertarusuario();
+
 ?>

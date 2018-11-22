@@ -1,4 +1,33 @@
+<script  src="../../assets/js/jquery-3.2.1.js"></script>
+    <script  src="../../assets/js/jquery.validate.js"></script>
+    <script>
+    $(document).ready(function(){
+var requerido="LLENE ESTE CAMPO";
+jQuery.validator.addMethod("letras", function(value, element) {
+return this.optional( element ) || /^[a-záéóóúàèìòùäëïöüñ\s]+$/i.test( value );
+}, 'Solo se permiten letras.');
+$("#sss").validate({
+rules:{
+nombre:{
+    required:true,
+    letras:true
+}
+},
+messages:{
+nombre:{
+required:requerido
+}
+}
 
+
+});
+});
+</script>
+<style type="text/css">
+.error{
+display: block;
+}
+</style>
             <center><br>
                 <h3><strong>TABLA DE PROGRAMAS</strong></h3>
                 <em>(tabla para agregar programas y  ver programas)</em></acronym><br><br>
@@ -57,7 +86,7 @@
             </div>
             <div class="modal-body">
 
-            <form method="POST" action="../../controlador/ejecutaprograma.php">
+            <form method="POST" action="../../controlador/ejecutaprograma.php" id="sss" name="sss">
                     Agregar programa:
                     <input type="text" name="nombre" id="nombre" style="width:50%; height:8%" class="form-control"
                         placeholder="Programa" required><br>
