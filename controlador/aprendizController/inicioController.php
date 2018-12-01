@@ -1,7 +1,7 @@
 <script  src="../../assets/js/jquery-3.2.1.js"></script>
     <script  src="../../assets/js/jquery.validate.js"></script>
     <script>
-      $(document).ready(function(){
+    $(document).ready(function(){
 var requerido="LLENE ESTE CAMPO";
 jQuery.validator.addMethod("letras", function(value, element) {
 return this.optional( element ) || /^[a-záéóóúàèìòùäëïöüñ\s]+$/i.test( value );
@@ -11,16 +11,14 @@ rules:{
     descripcion:{
     required:true,
     letras:true
-  }
 }
-  ,
+},
+
 messages:{
     descripcion:{
-  required:requerido
-  }
+required:requerido
 }
-
-
+}
 });
 });
 </script>

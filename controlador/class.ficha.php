@@ -9,13 +9,15 @@ include_once '../modelo/conexion.php';
 class ficha{
 	public $id_ficha;
 	public $nombre;
+	public $id_programa;
 	public $id_estado;
 	public $db;
 
 
-	public function __construct($nombre, $id_estado){
+	public function __construct($nombre,$id_programa,$id_estado){
 		$this->id_ficha;
 		$this->nombre = $nombre;
+		$this->id_programa = $id_programa;
 		$this->id_estado = $id_estado;
 		$this->db = new Conexion();
 	}//FIN CONSTRUCT//
@@ -24,10 +26,10 @@ class ficha{
 
 
 	public function insertarficha(){
-			$sql = "INSERT INTO ficha (nombre, id_estado) VALUES ('$this->nombre','$this->id_estado')";
+			$sql = "INSERT INTO ficha (nombre,id_programa,id_estado) VALUES ('$this->nombre','$this->id_programa','$this->id_estado')";
 			$this->db->query($sql);
 			if ($this->db->errno) {
-			die ('<script language="javascript">alert("NO SE HA PODIDO REGISTRAR LA FICHA");location.href="../views/agregarficha.php"</script>');
+			die ('<script language="javascript">alert("NO SE HA PODIDO REGISTRAR LA FICHA");location.href="../views/directivo/agregarficha.php"script>');
 			}else{
 			echo '<script language="javascript">alert("SE HA REGISTRADO LA FICHA CORRECTAMENTE");';
 			echo 'location.href="../views/directivo/agregarficha.php"</script>';
@@ -40,8 +42,9 @@ class ficha{
 
 static function imprimirficha($WHERE){
 		$db = new Conexion();
-		$sql = "SELECT ficha.id_ficha, ficha.nombre, estado.nombre as estadoo
+		$sql = "SELECT ficha.id_ficha, ficha.nombre, programa.nombre as programa ,estado.nombre as estadoo
 		FROM ficha
+		INNER JOIN programa on ficha.id_programa=programa.id_programa
 		INNER JOIN estado on ficha.id_estado=estado.id_estado
 		$WHERE";
 		$datos = $db->query($sql);

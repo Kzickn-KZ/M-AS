@@ -80,7 +80,7 @@ class Usuario{
 public function insertarsupervisor(){
 			$db = new Conexion();
 			$valido = $this->validardoc($this->documento);
-			if ($valido) {
+			if ($valido){
 			echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../views/directivo/agregarsup.php"</script>';
 			} else {
 			$sql_insertarsup = "INSERT INTO usuario
@@ -147,7 +147,7 @@ static  function validardoc($documento){
 		$chek = "SELECT * FROM usuario WHERE documento='$documento'";
 		$output_sql = $db->query($chek);
 	    if ($output_sql->num_rows >= 1){
-		$valido=true;
+		$valido = true;
 		}
 		return $valido;
 }
@@ -158,28 +158,19 @@ static  function validardoc($documento){
 
 
 //METODO ACTUALIZACION DE EL ROL USUARIO//
-public  function updateuser($id_usuario){
-
+static function updateuser($documento,$id_tipoDocumento,$nombre,$apellido,$correo,$telefono,$contrasena,$id_sede,$id_usuario){
 										$db = new Conexion();
-										$db = new Conexion();
-										$sql_upuser = "UPDATE usuario SET documento='$this->documento',
-										id_tipoDocumento='$this->id_tipoDocumento',
-										nombre='$this->nombre',
-										apellido='$this->apellido',
-										correo='$this->correo',
-										telefono='$this->telefono',
-										contrasena='$this->contrasena',
-										passadmin='$this->passadmin',
-										passsuper='$this->passsuper',
-										id_sede='$this->id_sede',
-										id_programa='$this->id_programa',
-										id_ficha='$this->id_ficha',
-										id_tipoUsuario='$this->id_tipoUsuario',
-										id_rol='$this->id_rol',
-										id_estado='$this->id_estado'
+										$sql_upuser = "UPDATE usuario SET documento='$documento',
+										id_tipoDocumento='$id_tipoDocumento',
+										nombre='$nombre',
+										apellido='$apellido',
+										correo='$correo',
+										telefono='$telefono',
+										contrasena='$contrasena',
+										id_sede='$id_sede'
 										WHERE id_usuario='$id_usuario'";
-				$this->db->query($sql_upuser);
-				if($this->db->errno){
+				$db->query($sql_upuser);
+				if($db->errno){
 		    	die('<script language="javascript">alert("No se an podido actualizar los datos");location.href="../views/aprendiz/updateuser.php"</script>');
 				}else{
 				echo '<script language="javascript">alert("SE HA ACTUALIZADO CORRECTAMENTE");</script>';

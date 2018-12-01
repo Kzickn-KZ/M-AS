@@ -32,8 +32,6 @@ class Horas{
 
 
 
-
-
 	//inicio metodo insertarhoras//
 	public function insertarhoras(){
 				$db = new Conexion();
@@ -48,10 +46,6 @@ class Horas{
             	echo 'location.href ="../views/aprendiz/horasregistradas.php"</script>';
 					}
 	}//fin metodo insertarhoras//
-
-
-
-
 
 
 
@@ -70,9 +64,6 @@ class Horas{
 
 
 
-
-
-
 static function cambiarEstado($estado, $codigo){
             $db = new Conexion();
             $mensaje="ESTAS HORAS HAN SIDO RECHAZADAS";
@@ -87,9 +78,6 @@ static function cambiarEstado($estado, $codigo){
 
 
 
-
-
-
 static function sumadehoras($WHERE){
 		$db = new Conexion();
 		$sql = "SELECT SUM(horas_realizadas) as horitas , id_estado , tok , DATE_FORMAT(fecha, '%m/%Y') as fechass FROM horas $WHERE";
@@ -99,17 +87,12 @@ static function sumadehoras($WHERE){
 
 
 
-
-
 static  function rowhoras($documento){
 	$db = new Conexion();
 	$chek = "SELECT * FROM horas WHERE MONTH(fecha) = MONTH(DATE_ADD(CURDATE(),INTERVAL -1 MONTH)) and documento='$documento'";
 	$output_sql = $db->query($chek);
 	return $output_sql;
 }
-
-
-
 
 
 
@@ -124,6 +107,7 @@ static function cambiartok($tok, $codigo){
 		echo ' <script language="javascript">alert("'.$mensaje.'");</script> ';
 		echo "<script>location.href='../views/directivo/horasadmin.php'</script>";
 }
+
 
 
 static function reiniciohoras($reinicio){

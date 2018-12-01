@@ -92,10 +92,10 @@ display: block;
         require_once "../../modelo/conexion.php";
         include_once "../../controlador/class.sede.php";
         $mysqli = new Conexion();
-        $sql = Sede::imprimirsede("");
-        while ($reg=$sql->fetch_array())
+        $sqle = Sede::imprimirsede("");
+        while ($regg=$sqle->fetch_array())
         {
-        echo "<option value=\"".$reg['id_sede']."\">".$reg['nombre']."</option>";
+        echo "<option value=\"".$regg['id_sede']."\">".$regg['nombre']."</option>";
         }
         ?>
         </select>

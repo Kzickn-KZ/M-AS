@@ -72,8 +72,6 @@ display: block;
                     Telefono:
                     <input type="number" name="telefono" id="telefono" style="width:30%; height:6%" class="form-control"
                         required placeholder="Telefono">
-                    <input type="hidden" name="contrasena" id="contrasena">
-                    <input type="hidden" name="passadmin" id="passadmin">
                     Contraseña:
                     <input type="password" name="passsuper" id="passsuper" style="width:30%; height:6%" class="form-control"
                         required placeholder="********">
@@ -93,13 +91,6 @@ echo "<option value=\"".$reg['id_sede']."\">".$reg['nombre']."</option>";
         }
         ?>
                     </select><br>
-                    <input type="hidden" name="id_programa" id="id_programa" value="1">
-                    <input type="hidden" name="id_ficha" id="id_ficha" value="1">
-                    <input type="hidden" name="id_tipoUsuario" id="id_tipoUsuario" value="1">
-                    <input type="hidden" name="id_rol" id="id_rol" value="2">
-                    <input type="hidden" name="id_estado" id="id_estado" value="1">
-
                     <input type="submit" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm" style="width:20%">
-
                 </form><br>
 

@@ -59,12 +59,13 @@ display: block;
                 $buscar = $_POST['T1'];
                 include_once'../../modelo/Conexion.php';
                 include_once'../../controlador/class.ficha.php';
-                $sql = Ficha::imprimirficha("WHERE ficha.nombre LIKE '%".$buscar."%'");
+                $sql = Ficha::imprimirficha("WHERE ficha.nombre LIKE '%".$buscar."%' or programa.nombre LIKE '%".$buscar."%'");
                 echo '<div class="table-responsive table-hover">';
                 echo '<table class="table">';
                 echo  '<thead class="bg-danger">';
                 echo '<tr>';
                 echo '<th scope="col">Numero De ficha</th>';
+                echo '<th scope="col">Programa de la ficha</th>';
                 echo '<th scope="col">Estado</th>';
                 echo '<th scope="col">Habilitar</th>';
                 echo '<th scope="col">Deshabilitar</th>';
@@ -75,6 +76,9 @@ display: block;
                 $reg['id_ficha'];
                 echo "<td>";
                 echo $reg['nombre'];
+                echo "</td>";
+                echo "<td>";
+                echo $reg['programa'];
                 echo "</td>";
                 echo "<td>";
                 echo $reg['estadoo'];
@@ -104,6 +108,21 @@ display: block;
                     Agregar ficha:
                     <input type="number" name="ficha" id="ficha" style="width:50%; height:8%" class="form-control"
                         placeholder="Ficha" required><br>
+                        Seleccione programa:
+                        <select name="programa" id="programa" style="width:50%; height:8%" class="form-control">
+                        <option>Seleccione ...</option>
+                        <?php
+            //CONEXION BASE DE DATOS//
+        require_once "../../modelo/conexion.php";
+        require_once '../../controlador/class.programa.php';
+        $mysqli = new Conexion();
+        $sql = Programa::imprimirprograma("WHERE estado.id_estado=1");
+        while ($reg=$sql->fetch_array())
+        {
+        echo "<option value=\"".$reg['id_programa']."\">".$reg['nombre']."</option>";
+        }
+        ?>
+                        </select><br>
                     <input type="submit" name="" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm" style="width:15%">
                 </form>
             </div>

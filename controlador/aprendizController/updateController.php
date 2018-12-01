@@ -65,9 +65,8 @@ display: block;
                 require_once "../../controlador/class.tipodocumento.php";
                 $mysqli = new Conexion();
                 $sql = Tipodocumento::imprimir("");
-                while ($reg=$sql->fetch_array())
-                {
-                echo "<option value=\"".$reg['id_tipoDocumento']."\">".$reg['nombre']."</option>";
+                while ($regr=$sql->fetch_array()){
+                echo "<option value=\"".$regr['id_tipoDocumento']."\">".$regr['nombre']."</option>";
                 }
                 ?>
         </select>
@@ -98,51 +97,6 @@ display: block;
                 while ($reg=$sql->fetch_array())
                 {
                 echo "<option value=\"".$reg['id_sede']."\">".$reg['nombre']."</option>";
-                }
-                ?>
-        </select>
-        Programa
-        <select name="id_programa" id="id_programa" style="width:30%; height:8%" class="form-control">
-        <option>seleccione...</option>
-            <?php
-                //CONEXION BASE DE DATOS//
-                require_once "../../modelo/conexion.php";
-                require_once '../../controlador/class.programa.php';
-                $mysqli = new Conexion();
-                $sql = Programa::imprimirprograma("");
-                while ($reg=$sql->fetch_array())
-                {
-                echo "<option value=\"".$reg['id_programa']."\">".$reg['nombre']."</option>";
-                }
-                ?>
-        </select>
-        Ficha
-        <select name="id_ficha" id="id_ficha" style="width:30%; height:8%" class="form-control">
-        <option>seleccione...</option>
-            <?php
-                //CONEXION BASE DE DATOS//
-                require_once "../../modelo/conexion.php";
-                include_once '../../controlador/class.ficha.php';
-                $mysqli = new Conexion();
-                $sql = Ficha::imprimirficha("WHERE estado.id_estado=1");
-                while ($reg=$sql->fetch_array())
-                {
-                echo "<option value=\"".$reg['id_ficha']."\">".$reg['nombre']."</option>";
-                }
-                ?>
-        </select>
-        Deseas inscribirte a:
-        <select name="id_tipoUsuario" id="id_tipoUsuario" style="width:30%; height:8%" class="form-control">
-        <option>seleccione...</option>
-            <?php
-                //CONEXION BASE DE DATOS//
-                require_once "../../modelo/conexion.php";
-                include_once'../../controlador/class.Tipousuario.php';
-                $mysqli = new Conexion();
-        	    $sql = Tipousuario::imprimirtipousuario("WHERE id_estado=1");
-                while ($reg=$sql->fetch_array())
-                {
-                echo "<option value=\"".$reg['id_tipoUsuario']."\">".$reg['nombre']."</option>";
                 }
                 ?>
         </select><br>

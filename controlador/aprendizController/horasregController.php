@@ -28,9 +28,11 @@
         $filas=$sql->fetch_assoc();
         $horitass=$filas['horitas'];
         $fechass = $filas['fechass'];
+
         $totals = $horitass-$horastotales;
+
         $fechaac = date('m-y');
-            if($fechass){
+            if($horitass){
                 echo "<script>toastr.warning('DEBE UN TOTAL DE: ".-$totals." HORAS DEl MES $fechass','EL APRENDIZ: $_SESSION[documento]')</script>";
             }else{
                         echo "<script>toastr.warning('NO DEBE HORAS','EL APRENDIZ: $_SESSION[documento]')</script>";
