@@ -82,9 +82,6 @@ display: block;
         Telefono
         <input name="telefono" id="telefono" value="<?php echo $regee[telefono]?>" type="number" placeholder="telefono"
             required="required" style="width:30%; height:8%" class="form-control">
-        Contraseña
-        <input name="contrasena" id="contrasena" type="password" value="<?php echo $regee[contrasena]?>" placeholder="Contraseña"
-            required="required" style="width:30%; height:8%" class="form-control">
         Sede
         <select name="id_sede" id="id_sede" style="width:30%; height:8%" class="form-control">
         <option>seleccione...</option>
@@ -100,6 +97,8 @@ display: block;
                 }
                 ?>
         </select><br>
+        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalCenterr">Actualizar contraseña</button>
+        <br><br>
 
         <input type="submit" name="button" id="button" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm"
             style="width:10%"><br>
@@ -109,5 +108,32 @@ display: block;
     <?php
         }
         ?>
+        <!-- Modal -->
+<div class="modal fade" id="exampleModalCenterr" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Cambiar contraseña</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <form  method="POST" action="../../controlador/actualizacontrasenauser.php">
+            Actual Contraseña:
+                <input type="password" required="required" id="anterior" name="anterior" style="width:50%; height:8%" class="form-control">
+            Nueva contraseña:
+            <input type="password" required="required" id="nueva" name="nueva" style="width:50%; height:8%" class="form-control">
+            <br>
+            <input type="submit" name="" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm" style="width:15%">
+            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!---FIN TEXTO--->

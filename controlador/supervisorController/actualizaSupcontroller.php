@@ -56,17 +56,40 @@
                     }
                     ?>
                     </select><br>
-                    <input type="hidden" name="id_programa" id="id_programa" value="1">
-                    <input type="hidden" name="id_ficha" id="id_ficha" value="1">
-                    <input type="hidden" name="id_tipoUsuario" id="id_tipoUsuario" value="1">
-
-
                 <?php
                 }
                 ?>
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalCenterro">Actualizar contraseña</button>
+        <br><br>
                 <input type="submit" name="button" id="button" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm"
                 style="width:5%" />
 
                     </form>
-            </center>
             <br>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenterro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Cambiar contraseña</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <form  method="POST" action="../../controlador/actualizacontrasenasupp.php">
+            Actual Contraseña:
+                <input type="password" required="required" id="anteriorr" name="anteriorr" style="width:50%; height:8%" class="form-control">
+            Nueva contraseña:
+            <input type="password" required="required" id="nuevaa" name="nuevaa" style="width:50%; height:8%" class="form-control">
+            <br>
+            <input type="submit" name="" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm" style="width:15%">
+            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

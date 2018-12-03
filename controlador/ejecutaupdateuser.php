@@ -8,10 +8,9 @@ $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $correo = $_POST['correo'];
 $telefono = $_POST['telefono'];
-$contrasena = $_POST['contrasena'];
 $id_sede = $_POST['id_sede'];
 $id_usuario= $_SESSION['id_usuario'];
 
-Usuario::updateuser($documento,$id_tipoDocumento,$nombre,$apellido,$correo,$telefono,$contrasena,$id_sede,$id_usuario);
+Usuario::updateuser($documento,$id_tipoDocumento,$nombre,$apellido,$correo,$telefono,$id_sede,$id_usuario);
 
 ?>

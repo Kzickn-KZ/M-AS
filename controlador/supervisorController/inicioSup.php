@@ -15,7 +15,7 @@
                 $buscar = $_POST['T1'];
         require("../../modelo/conexion.php");
         include '../../controlador/class.horas.php';
-        $query=Horas::imprimirHoras("WHERE horas.documento LIKE '%".$buscar."%' and usuario.id_usuario='$_SESSION[id_usuario]' GROUP BY documento");
+        $query=Horas::imprimirHoras("WHERE horas.documento LIKE '%".$buscar."%' and usuario.id_usuario='$_SESSION[id_usuario]' and tok=0 GROUP BY documento");
         echo '<div class="table-responsive table-hover">';
         echo '<table class="table">';
         echo  '<thead class="bg-danger">';

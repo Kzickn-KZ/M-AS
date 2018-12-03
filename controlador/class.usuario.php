@@ -158,7 +158,7 @@ static  function validardoc($documento){
 
 
 //METODO ACTUALIZACION DE EL ROL USUARIO//
-static function updateuser($documento,$id_tipoDocumento,$nombre,$apellido,$correo,$telefono,$contrasena,$id_sede,$id_usuario){
+static function updateuser($documento,$id_tipoDocumento,$nombre,$apellido,$correo,$telefono,$id_sede,$id_usuario){
 										$db = new Conexion();
 										$sql_upuser = "UPDATE usuario SET documento='$documento',
 										id_tipoDocumento='$id_tipoDocumento',
@@ -166,15 +166,14 @@ static function updateuser($documento,$id_tipoDocumento,$nombre,$apellido,$corre
 										apellido='$apellido',
 										correo='$correo',
 										telefono='$telefono',
-										contrasena='$contrasena',
 										id_sede='$id_sede'
 										WHERE id_usuario='$id_usuario'";
 				$db->query($sql_upuser);
 				if($db->errno){
-		    	die('<script language="javascript">alert("No se an podido actualizar los datos");location.href="../views/aprendiz/updateuser.php"</script>');
+		    	die('<script language="javascript">alert("No se an podido actualizar los datos");location.href="desconectar.php"</script>');
 				}else{
 				echo '<script language="javascript">alert("SE HA ACTUALIZADO CORRECTAMENTE");</script>';
-				echo '<script>location.href="../index.php"</script>';
+				echo '<script>location.href="desconectar.php"</script>';
 		}
 }
 //FIN METODO UPDATEUSER//
@@ -192,6 +191,54 @@ static function validatelogin($WHERE){
 	$sql_val = "SELECT * FROM usuario $WHERE";
 	$dats = $db->query($sql_val);
 	return $dats;
+}
+
+static function valcontrasena($WHERE){
+	$db = new Conexion();
+	$actu_contra = "SELECT * FROM usuario $WHERE";
+	$dd = $db->query($actu_contra);
+	return $dd;
+
+}
+
+static function actualizacontra($nueva,$user){
+	$db = new Conexion();
+	$jh = "UPDATE usuario SET contrasena='$nueva' WHERE id_usuario='$user'";
+	$db->query($jh);
+	if($db->errno){
+	die('<script language="javascript">alert("NO SE HA ACTUALIZADO LA CONTRASEÑA");location.href="../views/aprendiz/updateuser.php"</script>');
+	}else{
+	echo '<script language="javascript">alert("SE HA ACTUALIZADO CORRECTAMENTE");</script>';
+	echo '<script>location.href="desconectar.php"</script>';
+}
+
+}
+
+static function actualizacontrasupp($nuevaa,$userr){
+	$db = new Conexion();
+	$jhj = "UPDATE usuario SET passsuper='$nuevaa' WHERE id_usuario='$userr'";
+	$db->query($jhj);
+	if($db->errno){
+	die('<script language="javascript">alert("NO SE HA ACTUALIZADO LA CONTRASEÑA");location.href="../views/supervisor/actualizarsupp.php"</script>');
+	}else{
+	echo '<script language="javascript">alert("SE HA ACTUALIZADO CORRECTAMENTE");</script>';
+	echo '<script>location.href="desconectar.php"</script>';
+}
+
+}
+
+
+static function actualizacontraadmin($nuevas,$users){
+	$db = new Conexion();
+	$jhg = "UPDATE usuario SET passadmin='$nuevas' WHERE id_usuario='$users'";
+	$db->query($jhg);
+	if($db->errno){
+	die('<script language="javascript">alert("NO SE HA ACTUALIZADO LA CONTRASEÑA");location.href="../views/directivo/updateadmin.php"</script>');
+	}else{
+	echo '<script language="javascript">alert("SE HA ACTUALIZADO CORRECTAMENTE");</script>';
+	echo '<script>location.href="desconectar.php"</script>';
+}
+
 }
 
 
