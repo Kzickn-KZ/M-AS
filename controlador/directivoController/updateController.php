@@ -83,9 +83,6 @@ display: block;
                 Telefono:
                 <input type="number" name="telefono" id="telefono" value="<?php echo $arra[telefono]?>" style="width:30%; height:6%" class="form-control"
                 required placeholder="Telefono">
-                Contraseña:
-                <input type="text" name="passadmin" id="passadmin" value="<?php echo $arra[passadmin]?>" style="width:30%; height:6%" class="form-control"
-                required placeholder="********">
                 Sede
                 <select name="id_sede" id="id_sede" value="<?php echo $arra[sede]?>" style="width:30%; height:6%" class="form-control">
                 <option>Selecione...</option>

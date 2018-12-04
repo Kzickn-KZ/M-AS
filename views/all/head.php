@@ -38,4 +38,4 @@ toastr.options = {
 </script>
 </head>
 
-<body onload="deshabilitaRetroceso()">
+<body onload="deshabilitaRetroceso()" >

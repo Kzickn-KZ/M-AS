@@ -3,7 +3,7 @@ session_start();
 include_once'class.usuario.php';
 include_once'../modelo/Conexion.php';
 
-$anteriorr = $_POST['anteriors'];
+$anteriorr = sha1($_POST['anteriors']);
 $nuevas = $_POST['nuevas'];
 $users = $_SESSION['id_usuario'];
 

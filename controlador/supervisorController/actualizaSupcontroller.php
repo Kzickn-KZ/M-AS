@@ -40,9 +40,6 @@
                 Telefono:
                 <input type="text" name="telefono" id="telefono" value="<?php echo $res[telefono]?>" style="width:30%; height:6%" class="form-control"
                 required placeholder="Telefono">
-                Contraseña:
-                <input type="password" name="passsuper" id="passsuper" value="<?php echo $res[passsuper]?>" style="width:30%; height:6%" class="form-control"
-                required placeholder="********">
                 Sede
                 <select name="id_sede" id="id_sede" value="<?php echo $res[sede]?>" style="width:30%; height:6%" class="form-control">
                 <option>Selecione...</option>

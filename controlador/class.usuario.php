@@ -61,7 +61,7 @@ class Usuario{
 				$sql_insertarusuario = "INSERT INTO usuario
 				(documento,id_tipoDocumento,nombre,apellido,correo,telefono,contrasena,passadmin,passsuper,id_sede,id_programa,id_ficha,id_tipoUsuario,
 				id_rol,id_estado)
-				VALUES ('$this->documento','$this->id_tipoDocumento','$this->nombre','$this->apellido','$this->correo','$this->telefono','$this->contrasena','$this->passadmin','$this->passsuper','$this->id_sede','$this->id_programa','$this->id_ficha','$this->id_tipoUsuario','$this->id_rol','$this->id_estado')";
+				VALUES ('$this->documento','$this->id_tipoDocumento','$this->nombre','$this->apellido','$this->correo','$this->telefono',sha('$this->contrasena'),'$this->passadmin','$this->passsuper','$this->id_sede','$this->id_programa','$this->id_ficha','$this->id_tipoUsuario','$this->id_rol','$this->id_estado')";
 				$this->db->query($sql_insertarusuario);
 				if($this->db->errno){
 				die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR DILIGENCIA BIEN LOS DATOS");location.href="../views/inicio/registro_aprendiz.php"</script>');
@@ -86,7 +86,7 @@ public function insertarsupervisor(){
 			$sql_insertarsup = "INSERT INTO usuario
 			(documento,id_tipoDocumento,nombre,apellido,correo,telefono,contrasena,passadmin,passsuper,id_sede,id_programa,id_ficha,id_tipoUsuario,
 			id_rol,id_estado)
-			VALUES ('$this->documento','$this->id_tipoDocumento','$this->nombre','$this->apellido','$this->correo','$this->telefono','$this->contrasena','$this->passadmin','$this->passsuper','$this->id_sede','$this->id_programa','$this->id_ficha','$this->id_tipoUsuario','$this->id_rol','$this->id_estado')";
+			VALUES ('$this->documento','$this->id_tipoDocumento','$this->nombre','$this->apellido','$this->correo','$this->telefono','$this->contrasena','$this->passadmin',sha('$this->passsuper'),'$this->id_sede','$this->id_programa','$this->id_ficha','$this->id_tipoUsuario','$this->id_rol','$this->id_estado')";
 			$this->db->query($sql_insertarsup);
 			if($this->db->errno){
 			die('<script language="javascript">alert("ERROR, NO SE HA PODIDO REGISTRAR EL SUPERVISOR");location.href="../views/directivo/agregarsup.php" </script>');
@@ -203,7 +203,7 @@ static function valcontrasena($WHERE){
 
 static function actualizacontra($nueva,$user){
 	$db = new Conexion();
-	$jh = "UPDATE usuario SET contrasena='$nueva' WHERE id_usuario='$user'";
+	$jh = "UPDATE usuario SET contrasena=sha('$nueva') WHERE id_usuario='$user'";
 	$db->query($jh);
 	if($db->errno){
 	die('<script language="javascript">alert("NO SE HA ACTUALIZADO LA CONTRASEÑA");location.href="../views/aprendiz/updateuser.php"</script>');
@@ -216,7 +216,7 @@ static function actualizacontra($nueva,$user){
 
 static function actualizacontrasupp($nuevaa,$userr){
 	$db = new Conexion();
-	$jhj = "UPDATE usuario SET passsuper='$nuevaa' WHERE id_usuario='$userr'";
+	$jhj = "UPDATE usuario SET passsuper=sha('$nuevaa') WHERE id_usuario='$userr'";
 	$db->query($jhj);
 	if($db->errno){
 	die('<script language="javascript">alert("NO SE HA ACTUALIZADO LA CONTRASEÑA");location.href="../views/supervisor/actualizarsupp.php"</script>');
@@ -230,16 +230,16 @@ static function actualizacontrasupp($nuevaa,$userr){
 
 static function actualizacontraadmin($nuevas,$users){
 	$db = new Conexion();
-	$jhg = "UPDATE usuario SET passadmin='$nuevas' WHERE id_usuario='$users'";
+	$jhg = "UPDATE usuario SET passadmin=sha('$nuevas') WHERE id_usuario='$users'";
 	$db->query($jhg);
 	if($db->errno){
 	die('<script language="javascript">alert("NO SE HA ACTUALIZADO LA CONTRASEÑA");location.href="../views/directivo/updateadmin.php"</script>');
 	}else{
 	echo '<script language="javascript">alert("SE HA ACTUALIZADO CORRECTAMENTE");</script>';
 	echo '<script>location.href="desconectar.php"</script>';
-}
+	}
 
-}
+	}
 
 
 
