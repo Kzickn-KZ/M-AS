@@ -123,6 +123,8 @@ display: block;
                 <input type="password" required="required" id="anteriors" name="anteriors" style="width:50%; height:8%" class="form-control">
             Nueva contraseña:
             <input type="password" required="required" id="nuevas" name="nuevas" style="width:50%; height:8%" class="form-control">
+            Reescriba la contraseña:
+            <input type="password" required="required" id="nuevas2" name="nuevas2" style="width:50%; height:8%" class="form-control">
             <br>
             <input type="submit" name="" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm" style="width:15%">
             </form>

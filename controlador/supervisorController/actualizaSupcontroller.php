@@ -80,6 +80,8 @@
                 <input type="password" required="required" id="anteriorr" name="anteriorr" style="width:50%; height:8%" class="form-control">
             Nueva contraseña:
             <input type="password" required="required" id="nuevaa" name="nuevaa" style="width:50%; height:8%" class="form-control">
+            Reescriba la contraseña:
+            <input type="password" required="required" id="nuevaa2" name="nuevaa2" style="width:50%; height:8%" class="form-control">
             <br>
             <input type="submit" name="" value="Enviar" class="btn btn-lg btn-primary btn-block btn-sm" style="width:15%">
             </form>
