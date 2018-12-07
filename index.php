@@ -28,13 +28,39 @@
                         placeholder="Documento" required autofocus><br>
 				        <i class="glyphicon glyphicon-lock"></i>
                         <label for="nombreusuario"><b> Contraseña del Usuario</b></label>
-                        <input type="password" style="width:45%; height:10%" id="contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required><br>
+                        <input type="password" style="width:45%; height:10%" id="contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
+                        <label data-toggle="modal" data-target="#exampleModalCenterao">Olvido su contraseña?</label><br><br>
                 <button class="btn btn-primary" type="submit">Ingresar</button>
                     </form></a><br>
                     <form action="views/inicio/registro_aprendiz.php">
                     <button type="submit" class="btn btn-primary mb-5">Registrarse</button></a>
                 </form>
-                </center>
+                <!-- Modal -->
+<div class="modal fade" id="exampleModalCenterao" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Recuperar contraseña</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <form action="assets/PHPMailer/envia.php" method="POST">
+                Digitar Correo Electronico <br>
+                <input type="email" name="email" id="email" style="width:45%; height:10%"class="form-control" placeholder="E-mail" required>
+                <br>
+                <button class="btn btn-primary" type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
             <!---------------LOGIN LOGIN LOGIN---------------->
 <?php
 include_once'views/all/footer.php';

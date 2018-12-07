@@ -16,13 +16,16 @@ $contras=$gg['contrasena'];
 if($nueva!=$nueva2){
     echo ' <script language="javascript">alert("TU CONTRASEÑA NUEVA NO COINCIDEN");</script> ';
     echo "<script>location.href='../views/aprendiz/updateuser.php'</script>";
-}
-
+}else{
 if($anterior == $contras){
     usuario::actualizacontra($nueva,$user);
 }else{
 echo'<script language="javascript">alert("LAS CONTRASEÑAS NO COINCIDEN");location.href="../views/aprendiz/updateuser.php"</script>';
 }
+
+}
+
+
 
 
 

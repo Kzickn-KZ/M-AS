@@ -55,7 +55,11 @@ class Usuario{
 	public function insertarusuario(){
 				$db = new Conexion();
 				$valido = $this->validardoc($this->documento);
-				if ($valido) {
+				$valido2 = $this->validarcorreo($this->correo);
+
+				if($valido2){
+					echo '<script language="javascript">alert("Este correo ya esta registrado, porfavor intente con otro");location.href="../views/inicio/registro_aprendiz.php"</script>';
+				}if($valido){
 				echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../views/inicio/registro_aprendiz.php"</script>';
 				} else {
 				$sql_insertarusuario = "INSERT INTO usuario
@@ -70,6 +74,7 @@ class Usuario{
 				echo 'location.href ="../index.php"</script>';
 			}
 		}
+
 }
 
 
@@ -80,7 +85,11 @@ class Usuario{
 public function insertarsupervisor(){
 			$db = new Conexion();
 			$valido = $this->validardoc($this->documento);
-			if ($valido){
+			$valido2 = $this->validarcorreo($this->correo);
+
+			if($valido2){
+			echo '<script language="javascript">alert("Este correo ya esta registrado, porfavor intente con otro");location.href="../views/inicio/registro_aprendiz.php"</script>';
+			}if ($valido){
 			echo '<script language="javascript">alert("Este documento ya esta registrado, porfavor intente con otro");location.href="../views/directivo/agregarsup.php"</script>';
 			} else {
 			$sql_insertarsup = "INSERT INTO usuario
@@ -152,7 +161,15 @@ static  function validardoc($documento){
 		return $valido;
 }
 
-
+static  function validarcorreo($correo){
+	$db = new Conexion();
+	$cheki = "SELECT * FROM usuario WHERE correo='$correo'";
+	$output_sqli = $db->query($cheki);
+	if ($output_sqli->num_rows >= 1){
+	$valido2 = true;
+	}
+	return $valido2;
+}
 
 
 
@@ -240,6 +257,26 @@ static function actualizacontraadmin($nuevas,$users){
 	}
 
 	}
+
+
+static function envioEmail($email){
+		$db = new Conexion();
+		$flt = "SELECT * FROM usuario WHERE correo='$email'";
+		$vel = $db->query($flt);
+		return $vel;
+	}
+
+static function recuperarcontrasena($contra1,$codigo){
+	$db = new Conexion();
+	$l = "UPDATE usuario SET contrasena='$contra1' WHERE id_usuario='$codigo'";
+	$db->query($l);
+	if($db->errno){
+		die('<script language="javascript">alert("NO SE HA PODIDO CAMBIAR LA CONTRASEÑA");location.href="../index.php"</script>');
+	}else{
+		echo '<script language="javascript">alert("SE ACTUALIZO CORRECTAMENTE, POR FAVOR LOGUEE");';
+		echo 'location.href="../index.php"</script>';
+	}
+}
 
 
 

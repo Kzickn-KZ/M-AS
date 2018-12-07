@@ -21,7 +21,7 @@
         echo '<tr>';
         echo '<th scope="col">Documento</th>';
         echo '<th scope="col">Nombre</th>';
-        echo '<th scope="col">Apellido</th>';
+        //echo '<th scope="col">Apellido</th>';
         echo '<th scope="col">Sede</th>';
         echo '<th scope="col">Programa</th>';
         echo '<th scope="col">Ficha</th>';
@@ -35,7 +35,7 @@
                 echo "<td>$arreglo[1]</td>";
                 //echo "<td>$arreglo[2]</td>";
                 echo "<td>$arreglo[3]</td>";
-                echo "<td>$arreglo[4]</td>";
+                //echo "<td>$arreglo[4]</td>";
                 //echo "<td>$arreglo[5]</td>";
                 //echo "<td>$arreglo[6]</td>";
                 //echo "<td>$arreglo[7]</td>";
